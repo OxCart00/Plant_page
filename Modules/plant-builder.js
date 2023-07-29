@@ -6,14 +6,15 @@ class PlantRecomendation{
     this.pot = pot;
     this.style = style;
   }
-  setMoss(){
+  addMoss(){
     this.moss = 'Moss pole';
   }
-  setPebbles(){
+  addPebbles(){
     this.pebbles = 'Pebbles';
   }
-  setGreenies(){
+  addGreenies(){
     this.greenies = 'Mini Plants';
   }
 }
+module.exports = PlantRecomendation;
 
