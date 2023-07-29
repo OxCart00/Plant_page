@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "start": "parcel pages/index.html"
+    "start": "parcel pages/index.html",
+    "build": "parcel build pages/index.html"
   },
   "repository": {
     "type": "git",
