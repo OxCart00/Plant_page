@@ -7,13 +7,13 @@ class PlantRecomendation{
     this.style = style;
   }
   addMoss(){
-    this.moss = 'Moss pole';
+    this.moss = 'moss-pole';
   }
   addPebbles(){
-    this.pebbles = 'Pebbles';
+    this.pebbles = 'pebbles';
   }
   addGreenies(){
-    this.greenies = 'Mini Plants';
+    this.greenies = 'mini-plants';
   }
 }
 module.exports = PlantRecomendation;
