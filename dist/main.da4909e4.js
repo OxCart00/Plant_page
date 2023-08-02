@@ -117,9 +117,84 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../src/main.js":[function(require,module,exports) {
+})({"../src/Modules/plant-builder.js":[function(require,module,exports) {
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var PlantRecomendation = /*#__PURE__*/function () {
+  function PlantRecomendation(_ref) {
+    var location = _ref.location,
+      soil = _ref.soil,
+      toxicity = _ref.toxicity,
+      pot = _ref.pot,
+      style = _ref.style;
+    _classCallCheck(this, PlantRecomendation);
+    this.location = location;
+    this.soil = soil;
+    this.toxicity = toxicity;
+    this.pot = pot;
+    this.style = style;
+  }
+  _createClass(PlantRecomendation, [{
+    key: "addMoss",
+    value: function addMoss() {
+      this.moss = 'moss-pole';
+    }
+  }, {
+    key: "addPebbles",
+    value: function addPebbles() {
+      this.pebbles = 'pebbles';
+    }
+  }, {
+    key: "addGreenies",
+    value: function addGreenies() {
+      this.greenies = 'mini-plants';
+    }
+  }]);
+  return PlantRecomendation;
+}();
+module.exports = PlantRecomendation;
+},{}],"../src/main.js":[function(require,module,exports) {
+"use strict";
 
-},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var _plantBuilder = _interopRequireDefault(require("./Modules/plant-builder"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+// Obtener el botón "Get" por su ID
+var getButton = document.querySelector(".get--button");
+
+// Agregar un evento de clic al botón "Get"
+getButton.addEventListener("click", function (event) {
+  event.preventDefault(); // Evitar el envío del formulario
+
+  // Obtener todos los elementos de formulario por su clase
+  var formElements = document.getElementsByClassName("plants--form__answere");
+
+  // Crear un array para almacenar los IDs de los elementos seleccionados
+  var selectedIds = [];
+
+  // Recorrer los elementos de formulario para verificar cuáles están seleccionados
+  for (var i = 0; i < formElements.length; i++) {
+    var element = formElements[i];
+    if (element.checked) {
+      selectedIds.push(element.id);
+    }
+  }
+  if (selectedIds.length != 0) {
+    var newPlant = new _plantBuilder.default({
+      location: selectedIds[0],
+      soil: selectedIds[1],
+      toxicity: selectedIds[2],
+      pot: selectedIds[3],
+      style: selectedIds[4]
+    });
+    // Aquí puedes realizar cualquier acción que desees con los IDs de los elementos seleccionados
+    console.log("IDs de elementos seleccionados:", newPlant);
+  }
+});
+},{"./Modules/plant-builder":"../src/Modules/plant-builder.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
