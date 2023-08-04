@@ -1,0 +1,72 @@
+body{
+  opacity: 0.6;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1{
+  font-size: x-large;
+}
+
+.plants--form{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 50%;
+}
+.plants--form__question{
+  font-weight: bold;
+}
+/* Estilo para los radio buttons y checkboxes personalizados */
+.custom-radio input[type="radio"],
+.custom-checkbox input[type="checkbox"] {
+  display: none; /* Ocultar el input original */
+}
+
+.custom-radio label,
+.custom-checkbox label {
+  position: relative;
+  padding-left: 30px; /* Espacio para el indicador personalizado */
+  cursor: pointer;
+}
+
+.custom-radio label::before,
+.custom-checkbox label::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 2px solid darkgray; /* Borde morado para el indicador */
+  border-radius: 50%; /* Hacerlo circular para los radio buttons */
+  box-sizing: border-box;
+}
+
+.custom-checkbox label::before {
+  border-radius: 5px; /* Hacerlo rectangular para los checkboxes */
+}
+
+.custom-radio input[type="radio"]:checked + label::before ,
+.custom-checkbox input[type="checkbox"]:checked + label::before{
+  background-color: #7f03fc; /* Rellenar con morado cuando está marcado */
+}
+
+.plants--form__buttons-container{
+  width: 100%;
+  margin: 30px 10px;
+}
+
+.button--box{
+  color: #7f03fc;
+  background-color: white;
+  border-color: #7f03fc;
+  border-radius: 7px;
+  padding: 10px 30px;
+}
+
+.button--box:active{
+  color: white;
+  background-color: #7f03fc;
+}
