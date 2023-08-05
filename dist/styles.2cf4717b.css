@@ -8,12 +8,15 @@ body {
 h1 {
   font-size: x-large;
 }
+h3 {
+  margin: 0;
+}
 
 .plants--form {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  width: 50%;
+  width: 40%;
 }
 .plants--form__question {
   font-weight: bold;
@@ -70,5 +73,6 @@ h1 {
   color: white;
   background-color: #7f03fc;
 }
+
 
 /*# sourceMappingURL=/styles.2cf4717b.css.map */
