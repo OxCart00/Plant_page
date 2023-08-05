@@ -1,10 +1,8 @@
 class PlantRecomendation{
-  constructor({location,soil,toxicity,pot,style}){
-    this.location = location;
+  constructor({plant,soil,pot}){
+    this.plant = plant;
     this.soil = soil;
-    this.toxicity = toxicity;
     this.pot = pot;
-    this.style = style;
   }
   addMoss(){
     this.moss = 'moss-pole';
