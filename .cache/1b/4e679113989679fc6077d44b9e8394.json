@@ -1,1 +1,24 @@
-{"id":"index.html","dependencies":[{"name":"./Styles/styles.css","dynamic":true,"resolved":"/Users/oscar.corella/Documents/GitHub/Plant_page/Styles/styles.css","parent":"/Users/oscar.corella/Documents/GitHub/Plant_page/index.html"},{"name":"./main.js","dynamic":true,"resolved":"/Users/oscar.corella/Documents/GitHub/Plant_page/main.js","parent":"/Users/oscar.corella/Documents/GitHub/Plant_page/index.html"}],"generated":{"html":"<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"/9ab41432c26cd3a0639dec82691b5ed9.css\">\n    <title>Document</title>\n  </head>\n  <body>\n    <script src=\"/7a9076d6d94e62c13d641aa71f19ae8e.js\"></script>\n  </body>\n</html>\n"},"sourceMaps":null,"error":null,"hash":"21f272f847fc795d55377f2ee8e9d857","cacheData":{}}
+{
+  "id": "index.html",
+  "dependencies": [
+    {
+      "name": "./Styles/styles.css",
+      "dynamic": true,
+      "resolved": "/Users/oscar.corella/Documents/GitHub/Plant_page/Styles/styles.css",
+      "parent": "/Users/oscar.corella/Documents/GitHub/Plant_page/index.html"
+    },
+    {
+      "name": "./main.js",
+      "dynamic": true,
+      "resolved": "/Users/oscar.corella/Documents/GitHub/Plant_page/main.js",
+      "parent": "/Users/oscar.corella/Documents/GitHub/Plant_page/index.html"
+    }
+  ],
+  "generated": {
+    "html": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"/9ab41432c26cd3a0639dec82691b5ed9.css\">\n    <title>Document</title>\n  </head>\n  <body>\n    <script src=\"/7a9076d6d94e62c13d641aa71f19ae8e.js\"></script>\n  </body>\n</html>\n"
+  },
+  "sourceMaps": null,
+  "error": null,
+  "hash": "21f272f847fc795d55377f2ee8e9d857",
+  "cacheData": {}
+}

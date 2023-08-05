@@ -1,1 +1,976 @@
-{"id":"../src/main.js","dependencies":[{"name":"/Users/oscar.corella/Documents/GitHub/Plant_page/package.json","includedInParent":true,"mtime":1690924119494},{"name":"./Modules/plant-builder","loc":{"line":1,"column":31,"index":31},"parent":"/Users/oscar.corella/Documents/GitHub/Plant_page/src/main.js","resolved":"/Users/oscar.corella/Documents/GitHub/Plant_page/src/Modules/plant-builder.js"}],"generated":{"js":"\"use strict\";\n\nvar _plantBuilder = _interopRequireDefault(require(\"./Modules/plant-builder\"));\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n// Obtener el botón \"Get\" por su ID\nvar getButton = document.querySelector(\".get--button\");\n\n// Agregar un evento de clic al botón \"Get\"\ngetButton.addEventListener(\"click\", function (event) {\n  event.preventDefault(); // Evitar el envío del formulario\n\n  // Obtener todos los elementos de formulario por su clase\n  var formElements = document.getElementsByClassName(\"plants--form__answere\");\n\n  // Crear un array para almacenar los IDs de los elementos seleccionados\n  var selectedIds = [];\n\n  // Recorrer los elementos de formulario para verificar cuáles están seleccionados\n  for (var i = 0; i < formElements.length; i++) {\n    var element = formElements[i];\n    if (element.checked) {\n      selectedIds.push(element.id);\n    }\n  }\n  if (selectedIds.length != 0) {\n    var newPlant = new _plantBuilder.default({\n      location: selectedIds[0],\n      soil: selectedIds[1],\n      toxicity: selectedIds[2],\n      pot: selectedIds[3],\n      style: selectedIds[4]\n    });\n    // Aquí puedes realizar cualquier acción que desees con los IDs de los elementos seleccionados\n    console.log(\"IDs de elementos seleccionados:\", newPlant);\n  }\n});"},"sourceMaps":{"js":{"mappings":[{"generated":{"line":3,"column":0},"source":"../src/main.js","original":{"line":1,"column":0}},{"generated":{"line":3,"column":4},"source":"../src/main.js","original":{"line":1,"column":0},"name":"_plantBuilder"},{"generated":{"line":3,"column":17},"source":"../src/main.js","original":{"line":1,"column":0}},{"generated":{"line":3,"column":20},"source":"../src/main.js","original":{"line":1,"column":0},"name":"_interopRequireDefault"},{"generated":{"line":3,"column":42},"source":"../src/main.js","original":{"line":1,"column":0}},{"generated":{"line":3,"column":43},"source":"../src/main.js","original":{"line":1,"column":0},"name":"require"},{"generated":{"line":3,"column":50},"source":"../src/main.js","original":{"line":1,"column":0}},{"generated":{"line":4,"column":0},"source":"../src/main.js","original":{"line":1,"column":57}},{"generated":{"line":4,"column":9},"source":"../src/main.js","original":{"line":1,"column":57},"name":"_interopRequireDefault"},{"generated":{"line":4,"column":32},"source":"../src/main.js","original":{"line":1,"column":57},"name":"obj"},{"generated":{"line":4,"column":35},"source":"../src/main.js","original":{"line":1,"column":57}},{"generated":{"line":4,"column":46},"source":"../src/main.js","original":{"line":1,"column":57},"name":"obj"},{"generated":{"line":4,"column":49},"source":"../src/main.js","original":{"line":1,"column":57}},{"generated":{"line":4,"column":53},"source":"../src/main.js","original":{"line":1,"column":57},"name":"obj"},{"generated":{"line":4,"column":56},"source":"../src/main.js","original":{"line":1,"column":57}},{"generated":{"line":4,"column":57},"source":"../src/main.js","original":{"line":1,"column":57},"name":"__esModule"},{"generated":{"line":4,"column":67},"source":"../src/main.js","original":{"line":1,"column":57}},{"generated":{"line":4,"column":70},"source":"../src/main.js","original":{"line":1,"column":57},"name":"obj"},{"generated":{"line":4,"column":73},"source":"../src/main.js","original":{"line":1,"column":57}},{"generated":{"line":4,"column":78},"source":"../src/main.js","original":{"line":1,"column":57},"name":"default"},{"generated":{"line":4,"column":85},"source":"../src/main.js","original":{"line":1,"column":57}},{"generated":{"line":4,"column":87},"source":"../src/main.js","original":{"line":1,"column":57},"name":"obj"},{"generated":{"line":4,"column":90},"source":"../src/main.js","original":{"line":1,"column":57}},{"generated":{"line":5,"column":0},"source":"../src/main.js","original":{"line":3,"column":0}},{"generated":{"line":6,"column":0},"source":"../src/main.js","original":{"line":4,"column":0}},{"generated":{"line":6,"column":4},"source":"../src/main.js","original":{"line":4,"column":6},"name":"getButton"},{"generated":{"line":6,"column":13},"source":"../src/main.js","original":{"line":4,"column":15}},{"generated":{"line":6,"column":16},"source":"../src/main.js","original":{"line":4,"column":18},"name":"document"},{"generated":{"line":6,"column":24},"source":"../src/main.js","original":{"line":4,"column":26}},{"generated":{"line":6,"column":25},"source":"../src/main.js","original":{"line":4,"column":27},"name":"querySelector"},{"generated":{"line":6,"column":38},"source":"../src/main.js","original":{"line":4,"column":40}},{"generated":{"line":6,"column":39},"source":"../src/main.js","original":{"line":4,"column":41}},{"generated":{"line":6,"column":53},"source":"../src/main.js","original":{"line":4,"column":55}},{"generated":{"line":6,"column":54},"source":"../src/main.js","original":{"line":4,"column":56}},{"generated":{"line":8,"column":0},"source":"../src/main.js","original":{"line":7,"column":0}},{"generated":{"line":9,"column":0},"source":"../src/main.js","original":{"line":8,"column":0},"name":"getButton"},{"generated":{"line":9,"column":9},"source":"../src/main.js","original":{"line":8,"column":9}},{"generated":{"line":9,"column":10},"source":"../src/main.js","original":{"line":8,"column":10},"name":"addEventListener"},{"generated":{"line":9,"column":26},"source":"../src/main.js","original":{"line":8,"column":26}},{"generated":{"line":9,"column":27},"source":"../src/main.js","original":{"line":8,"column":27}},{"generated":{"line":9,"column":34},"source":"../src/main.js","original":{"line":8,"column":34}},{"generated":{"line":9,"column":36},"source":"../src/main.js","original":{"line":8,"column":36}},{"generated":{"line":9,"column":46},"source":"../src/main.js","original":{"line":8,"column":46},"name":"event"},{"generated":{"line":9,"column":51},"source":"../src/main.js","original":{"line":8,"column":51}},{"generated":{"line":9,"column":53},"source":"../src/main.js","original":{"line":8,"column":53}},{"generated":{"line":10,"column":2},"source":"../src/main.js","original":{"line":9,"column":2},"name":"event"},{"generated":{"line":10,"column":7},"source":"../src/main.js","original":{"line":9,"column":7}},{"generated":{"line":10,"column":8},"source":"../src/main.js","original":{"line":9,"column":8},"name":"preventDefault"},{"generated":{"line":10,"column":22},"source":"../src/main.js","original":{"line":9,"column":22}},{"generated":{"line":10,"column":23},"source":"../src/main.js","original":{"line":9,"column":23}},{"generated":{"line":10,"column":24},"source":"../src/main.js","original":{"line":9,"column":24}},{"generated":{"line":10,"column":25},"source":"../src/main.js","original":{"line":9,"column":25}},{"generated":{"line":10,"column":26},"source":"../src/main.js","original":{"line":9,"column":26}},{"generated":{"line":12,"column":2},"source":"../src/main.js","original":{"line":11,"column":2}},{"generated":{"line":13,"column":2},"source":"../src/main.js","original":{"line":12,"column":2}},{"generated":{"line":13,"column":6},"source":"../src/main.js","original":{"line":12,"column":8},"name":"formElements"},{"generated":{"line":13,"column":18},"source":"../src/main.js","original":{"line":12,"column":20}},{"generated":{"line":13,"column":21},"source":"../src/main.js","original":{"line":12,"column":23},"name":"document"},{"generated":{"line":13,"column":29},"source":"../src/main.js","original":{"line":12,"column":31}},{"generated":{"line":13,"column":30},"source":"../src/main.js","original":{"line":12,"column":32},"name":"getElementsByClassName"},{"generated":{"line":13,"column":52},"source":"../src/main.js","original":{"line":12,"column":54}},{"generated":{"line":13,"column":53},"source":"../src/main.js","original":{"line":12,"column":55}},{"generated":{"line":13,"column":76},"source":"../src/main.js","original":{"line":12,"column":78}},{"generated":{"line":13,"column":77},"source":"../src/main.js","original":{"line":12,"column":79}},{"generated":{"line":15,"column":2},"source":"../src/main.js","original":{"line":14,"column":2}},{"generated":{"line":16,"column":2},"source":"../src/main.js","original":{"line":15,"column":2}},{"generated":{"line":16,"column":6},"source":"../src/main.js","original":{"line":15,"column":8},"name":"selectedIds"},{"generated":{"line":16,"column":17},"source":"../src/main.js","original":{"line":15,"column":19}},{"generated":{"line":16,"column":20},"source":"../src/main.js","original":{"line":15,"column":22}},{"generated":{"line":16,"column":22},"source":"../src/main.js","original":{"line":15,"column":24}},{"generated":{"line":18,"column":2},"source":"../src/main.js","original":{"line":17,"column":2}},{"generated":{"line":19,"column":2},"source":"../src/main.js","original":{"line":18,"column":2}},{"generated":{"line":19,"column":7},"source":"../src/main.js","original":{"line":18,"column":7}},{"generated":{"line":19,"column":11},"source":"../src/main.js","original":{"line":18,"column":11},"name":"i"},{"generated":{"line":19,"column":12},"source":"../src/main.js","original":{"line":18,"column":12}},{"generated":{"line":19,"column":15},"source":"../src/main.js","original":{"line":18,"column":15}},{"generated":{"line":19,"column":16},"source":"../src/main.js","original":{"line":18,"column":16}},{"generated":{"line":19,"column":18},"source":"../src/main.js","original":{"line":18,"column":18},"name":"i"},{"generated":{"line":19,"column":19},"source":"../src/main.js","original":{"line":18,"column":19}},{"generated":{"line":19,"column":22},"source":"../src/main.js","original":{"line":18,"column":22},"name":"formElements"},{"generated":{"line":19,"column":34},"source":"../src/main.js","original":{"line":18,"column":34}},{"generated":{"line":19,"column":35},"source":"../src/main.js","original":{"line":18,"column":35},"name":"length"},{"generated":{"line":19,"column":41},"source":"../src/main.js","original":{"line":18,"column":41}},{"generated":{"line":19,"column":43},"source":"../src/main.js","original":{"line":18,"column":43},"name":"i"},{"generated":{"line":19,"column":44},"source":"../src/main.js","original":{"line":18,"column":44}},{"generated":{"line":19,"column":46},"source":"../src/main.js","original":{"line":18,"column":46}},{"generated":{"line":19,"column":48},"source":"../src/main.js","original":{"line":18,"column":48}},{"generated":{"line":20,"column":4},"source":"../src/main.js","original":{"line":19,"column":4}},{"generated":{"line":20,"column":8},"source":"../src/main.js","original":{"line":19,"column":10},"name":"element"},{"generated":{"line":20,"column":15},"source":"../src/main.js","original":{"line":19,"column":17}},{"generated":{"line":20,"column":18},"source":"../src/main.js","original":{"line":19,"column":20},"name":"formElements"},{"generated":{"line":20,"column":30},"source":"../src/main.js","original":{"line":19,"column":32}},{"generated":{"line":20,"column":31},"source":"../src/main.js","original":{"line":19,"column":33},"name":"i"},{"generated":{"line":20,"column":32},"source":"../src/main.js","original":{"line":19,"column":34}},{"generated":{"line":20,"column":33},"source":"../src/main.js","original":{"line":19,"column":35}},{"generated":{"line":21,"column":4},"source":"../src/main.js","original":{"line":20,"column":4}},{"generated":{"line":21,"column":8},"source":"../src/main.js","original":{"line":20,"column":8},"name":"element"},{"generated":{"line":21,"column":15},"source":"../src/main.js","original":{"line":20,"column":15}},{"generated":{"line":21,"column":16},"source":"../src/main.js","original":{"line":20,"column":16},"name":"checked"},{"generated":{"line":21,"column":23},"source":"../src/main.js","original":{"line":20,"column":23}},{"generated":{"line":21,"column":25},"source":"../src/main.js","original":{"line":20,"column":25}},{"generated":{"line":22,"column":6},"source":"../src/main.js","original":{"line":21,"column":6},"name":"selectedIds"},{"generated":{"line":22,"column":17},"source":"../src/main.js","original":{"line":21,"column":17}},{"generated":{"line":22,"column":18},"source":"../src/main.js","original":{"line":21,"column":18},"name":"push"},{"generated":{"line":22,"column":22},"source":"../src/main.js","original":{"line":21,"column":22}},{"generated":{"line":22,"column":23},"source":"../src/main.js","original":{"line":21,"column":23},"name":"element"},{"generated":{"line":22,"column":30},"source":"../src/main.js","original":{"line":21,"column":30}},{"generated":{"line":22,"column":31},"source":"../src/main.js","original":{"line":21,"column":31},"name":"id"},{"generated":{"line":22,"column":33},"source":"../src/main.js","original":{"line":21,"column":33}},{"generated":{"line":22,"column":34},"source":"../src/main.js","original":{"line":21,"column":34}},{"generated":{"line":23,"column":4},"source":"../src/main.js","original":{"line":22,"column":4}},{"generated":{"line":24,"column":2},"source":"../src/main.js","original":{"line":23,"column":2}},{"generated":{"line":25,"column":2},"source":"../src/main.js","original":{"line":24,"column":2}},{"generated":{"line":25,"column":6},"source":"../src/main.js","original":{"line":24,"column":6},"name":"selectedIds"},{"generated":{"line":25,"column":17},"source":"../src/main.js","original":{"line":24,"column":17}},{"generated":{"line":25,"column":18},"source":"../src/main.js","original":{"line":24,"column":18},"name":"length"},{"generated":{"line":25,"column":24},"source":"../src/main.js","original":{"line":24,"column":24}},{"generated":{"line":25,"column":28},"source":"../src/main.js","original":{"line":24,"column":28}},{"generated":{"line":25,"column":29},"source":"../src/main.js","original":{"line":24,"column":29}},{"generated":{"line":25,"column":31},"source":"../src/main.js","original":{"line":24,"column":31}},{"generated":{"line":26,"column":4},"source":"../src/main.js","original":{"line":25,"column":4}},{"generated":{"line":26,"column":8},"source":"../src/main.js","original":{"line":25,"column":8},"name":"newPlant"},{"generated":{"line":26,"column":16},"source":"../src/main.js","original":{"line":25,"column":16}},{"generated":{"line":26,"column":19},"source":"../src/main.js","original":{"line":25,"column":19}},{"generated":{"line":26,"column":23},"source":"../src/main.js","original":{"line":25,"column":23},"name":"PlantRecomendation"},{"generated":{"line":26,"column":44},"source":"../src/main.js","original":{"line":25,"column":41}},{"generated":{"line":26,"column":45},"source":"../src/main.js","original":{"line":25,"column":42}},{"generated":{"line":27,"column":6},"source":"../src/main.js","original":{"line":25,"column":44},"name":"location"},{"generated":{"line":27,"column":14},"source":"../src/main.js","original":{"line":25,"column":52}},{"generated":{"line":27,"column":16},"source":"../src/main.js","original":{"line":25,"column":54},"name":"selectedIds"},{"generated":{"line":27,"column":27},"source":"../src/main.js","original":{"line":25,"column":65}},{"generated":{"line":27,"column":28},"source":"../src/main.js","original":{"line":25,"column":66}},{"generated":{"line":27,"column":29},"source":"../src/main.js","original":{"line":25,"column":67}},{"generated":{"line":27,"column":30},"source":"../src/main.js","original":{"line":25,"column":68}},{"generated":{"line":28,"column":6},"source":"../src/main.js","original":{"line":25,"column":70},"name":"soil"},{"generated":{"line":28,"column":10},"source":"../src/main.js","original":{"line":25,"column":74}},{"generated":{"line":28,"column":12},"source":"../src/main.js","original":{"line":25,"column":76},"name":"selectedIds"},{"generated":{"line":28,"column":23},"source":"../src/main.js","original":{"line":25,"column":87}},{"generated":{"line":28,"column":24},"source":"../src/main.js","original":{"line":25,"column":88}},{"generated":{"line":28,"column":25},"source":"../src/main.js","original":{"line":25,"column":89}},{"generated":{"line":28,"column":26},"source":"../src/main.js","original":{"line":25,"column":90}},{"generated":{"line":29,"column":6},"source":"../src/main.js","original":{"line":25,"column":92},"name":"toxicity"},{"generated":{"line":29,"column":14},"source":"../src/main.js","original":{"line":25,"column":100}},{"generated":{"line":29,"column":16},"source":"../src/main.js","original":{"line":25,"column":102},"name":"selectedIds"},{"generated":{"line":29,"column":27},"source":"../src/main.js","original":{"line":25,"column":113}},{"generated":{"line":29,"column":28},"source":"../src/main.js","original":{"line":25,"column":114}},{"generated":{"line":29,"column":29},"source":"../src/main.js","original":{"line":25,"column":115}},{"generated":{"line":29,"column":30},"source":"../src/main.js","original":{"line":25,"column":116}},{"generated":{"line":30,"column":6},"source":"../src/main.js","original":{"line":25,"column":118},"name":"pot"},{"generated":{"line":30,"column":9},"source":"../src/main.js","original":{"line":25,"column":121}},{"generated":{"line":30,"column":11},"source":"../src/main.js","original":{"line":25,"column":123},"name":"selectedIds"},{"generated":{"line":30,"column":22},"source":"../src/main.js","original":{"line":25,"column":134}},{"generated":{"line":30,"column":23},"source":"../src/main.js","original":{"line":25,"column":135}},{"generated":{"line":30,"column":24},"source":"../src/main.js","original":{"line":25,"column":136}},{"generated":{"line":30,"column":25},"source":"../src/main.js","original":{"line":25,"column":137}},{"generated":{"line":31,"column":6},"source":"../src/main.js","original":{"line":25,"column":139},"name":"style"},{"generated":{"line":31,"column":11},"source":"../src/main.js","original":{"line":25,"column":144}},{"generated":{"line":31,"column":13},"source":"../src/main.js","original":{"line":25,"column":146},"name":"selectedIds"},{"generated":{"line":31,"column":24},"source":"../src/main.js","original":{"line":25,"column":157}},{"generated":{"line":31,"column":25},"source":"../src/main.js","original":{"line":25,"column":158}},{"generated":{"line":31,"column":26},"source":"../src/main.js","original":{"line":25,"column":159}},{"generated":{"line":32,"column":4},"source":"../src/main.js","original":{"line":25,"column":161}},{"generated":{"line":32,"column":5},"source":"../src/main.js","original":{"line":25,"column":162}},{"generated":{"line":32,"column":6},"source":"../src/main.js","original":{"line":25,"column":163}},{"generated":{"line":33,"column":4},"source":"../src/main.js","original":{"line":26,"column":4}},{"generated":{"line":34,"column":4},"source":"../src/main.js","original":{"line":27,"column":4},"name":"console"},{"generated":{"line":34,"column":11},"source":"../src/main.js","original":{"line":27,"column":11}},{"generated":{"line":34,"column":12},"source":"../src/main.js","original":{"line":27,"column":12},"name":"log"},{"generated":{"line":34,"column":15},"source":"../src/main.js","original":{"line":27,"column":15}},{"generated":{"line":34,"column":16},"source":"../src/main.js","original":{"line":27,"column":16}},{"generated":{"line":34,"column":49},"source":"../src/main.js","original":{"line":27,"column":49}},{"generated":{"line":34,"column":51},"source":"../src/main.js","original":{"line":27,"column":51},"name":"newPlant"},{"generated":{"line":34,"column":59},"source":"../src/main.js","original":{"line":27,"column":59}},{"generated":{"line":34,"column":60},"source":"../src/main.js","original":{"line":27,"column":60}},{"generated":{"line":35,"column":2},"source":"../src/main.js","original":{"line":28,"column":2}},{"generated":{"line":36,"column":0},"source":"../src/main.js","original":{"line":30,"column":0}},{"generated":{"line":36,"column":1},"source":"../src/main.js","original":{"line":30,"column":1}},{"generated":{"line":36,"column":2},"source":"../src/main.js","original":{"line":30,"column":2}}],"sources":{"../src/main.js":"import PlantRecomendation from \"./Modules/plant-builder\";\n\n// Obtener el botón \"Get\" por su ID\nconst getButton = document.querySelector(\".get--button\");\n\n\n// Agregar un evento de clic al botón \"Get\"\ngetButton.addEventListener(\"click\", function (event) {\n  event.preventDefault(); // Evitar el envío del formulario\n\n  // Obtener todos los elementos de formulario por su clase\n  const formElements = document.getElementsByClassName(\"plants--form__answere\");\n\n  // Crear un array para almacenar los IDs de los elementos seleccionados\n  const selectedIds = [];\n\n  // Recorrer los elementos de formulario para verificar cuáles están seleccionados\n  for (let i = 0; i < formElements.length; i++) {\n    const element = formElements[i];\n    if (element.checked) {\n      selectedIds.push(element.id);\n    }\n  }\n  if (selectedIds.length != 0) {\n    let newPlant = new PlantRecomendation({ location: selectedIds[0], soil: selectedIds[1], toxicity: selectedIds[2], pot: selectedIds[3], style: selectedIds[4] });\n    // Aquí puedes realizar cualquier acción que desees con los IDs de los elementos seleccionados\n    console.log(\"IDs de elementos seleccionados:\", newPlant);\n  }\n\n});\n\n\n\n\n\n\n"},"lineCount":null}},"error":null,"hash":"53f359aa3d2907a011be22af7148811d","cacheData":{"env":{}}}
+{
+  "id": "../src/main.js",
+  "dependencies": [
+    {
+      "name": "/Users/oscar.corella/Documents/GitHub/Plant_page/package.json",
+      "includedInParent": true,
+      "mtime": 1690924119494
+    },
+    {
+      "name": "./Modules/plant-builder",
+      "loc": { "line": 1, "column": 31, "index": 31 },
+      "parent": "/Users/oscar.corella/Documents/GitHub/Plant_page/src/main.js",
+      "resolved": "/Users/oscar.corella/Documents/GitHub/Plant_page/src/Modules/plant-builder.js"
+    }
+  ],
+  "generated": {
+    "js": "\"use strict\";\n\nvar _plantBuilder = _interopRequireDefault(require(\"./Modules/plant-builder\"));\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n// Obtener el botón \"Get\" por su ID\nvar getButton = document.querySelector(\".get--button\");\n\n// Agregar un evento de clic al botón \"Get\"\ngetButton.addEventListener(\"click\", function (event) {\n  event.preventDefault(); // Evitar el envío del formulario\n\n  // Obtener todos los elementos de formulario por su clase\n  var formElements = document.getElementsByClassName(\"plants--form__answere\");\n\n  // Crear un array para almacenar los IDs de los elementos seleccionados\n  var selectedIds = [];\n\n  // Recorrer los elementos de formulario para verificar cuáles están seleccionados\n  for (var i = 0; i < formElements.length; i++) {\n    var element = formElements[i];\n    if (element.checked) {\n      selectedIds.push(element.id);\n    }\n  }\n  if (selectedIds.length != 0) {\n    var newPlant = new _plantBuilder.default({\n      location: selectedIds[0],\n      soil: selectedIds[1],\n      toxicity: selectedIds[2],\n      pot: selectedIds[3],\n      style: selectedIds[4]\n    });\n    // Aquí puedes realizar cualquier acción que desees con los IDs de los elementos seleccionados\n    console.log(\"IDs de elementos seleccionados:\", newPlant);\n  }\n});"
+  },
+  "sourceMaps": {
+    "js": {
+      "mappings": [
+        {
+          "generated": { "line": 3, "column": 0 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 0 }
+        },
+        {
+          "generated": { "line": 3, "column": 4 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 0 },
+          "name": "_plantBuilder"
+        },
+        {
+          "generated": { "line": 3, "column": 17 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 0 }
+        },
+        {
+          "generated": { "line": 3, "column": 20 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 0 },
+          "name": "_interopRequireDefault"
+        },
+        {
+          "generated": { "line": 3, "column": 42 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 0 }
+        },
+        {
+          "generated": { "line": 3, "column": 43 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 0 },
+          "name": "require"
+        },
+        {
+          "generated": { "line": 3, "column": 50 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 0 }
+        },
+        {
+          "generated": { "line": 4, "column": 0 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 }
+        },
+        {
+          "generated": { "line": 4, "column": 9 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 },
+          "name": "_interopRequireDefault"
+        },
+        {
+          "generated": { "line": 4, "column": 32 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 },
+          "name": "obj"
+        },
+        {
+          "generated": { "line": 4, "column": 35 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 }
+        },
+        {
+          "generated": { "line": 4, "column": 46 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 },
+          "name": "obj"
+        },
+        {
+          "generated": { "line": 4, "column": 49 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 }
+        },
+        {
+          "generated": { "line": 4, "column": 53 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 },
+          "name": "obj"
+        },
+        {
+          "generated": { "line": 4, "column": 56 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 }
+        },
+        {
+          "generated": { "line": 4, "column": 57 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 },
+          "name": "__esModule"
+        },
+        {
+          "generated": { "line": 4, "column": 67 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 }
+        },
+        {
+          "generated": { "line": 4, "column": 70 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 },
+          "name": "obj"
+        },
+        {
+          "generated": { "line": 4, "column": 73 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 }
+        },
+        {
+          "generated": { "line": 4, "column": 78 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 },
+          "name": "default"
+        },
+        {
+          "generated": { "line": 4, "column": 85 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 }
+        },
+        {
+          "generated": { "line": 4, "column": 87 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 },
+          "name": "obj"
+        },
+        {
+          "generated": { "line": 4, "column": 90 },
+          "source": "../src/main.js",
+          "original": { "line": 1, "column": 57 }
+        },
+        {
+          "generated": { "line": 5, "column": 0 },
+          "source": "../src/main.js",
+          "original": { "line": 3, "column": 0 }
+        },
+        {
+          "generated": { "line": 6, "column": 0 },
+          "source": "../src/main.js",
+          "original": { "line": 4, "column": 0 }
+        },
+        {
+          "generated": { "line": 6, "column": 4 },
+          "source": "../src/main.js",
+          "original": { "line": 4, "column": 6 },
+          "name": "getButton"
+        },
+        {
+          "generated": { "line": 6, "column": 13 },
+          "source": "../src/main.js",
+          "original": { "line": 4, "column": 15 }
+        },
+        {
+          "generated": { "line": 6, "column": 16 },
+          "source": "../src/main.js",
+          "original": { "line": 4, "column": 18 },
+          "name": "document"
+        },
+        {
+          "generated": { "line": 6, "column": 24 },
+          "source": "../src/main.js",
+          "original": { "line": 4, "column": 26 }
+        },
+        {
+          "generated": { "line": 6, "column": 25 },
+          "source": "../src/main.js",
+          "original": { "line": 4, "column": 27 },
+          "name": "querySelector"
+        },
+        {
+          "generated": { "line": 6, "column": 38 },
+          "source": "../src/main.js",
+          "original": { "line": 4, "column": 40 }
+        },
+        {
+          "generated": { "line": 6, "column": 39 },
+          "source": "../src/main.js",
+          "original": { "line": 4, "column": 41 }
+        },
+        {
+          "generated": { "line": 6, "column": 53 },
+          "source": "../src/main.js",
+          "original": { "line": 4, "column": 55 }
+        },
+        {
+          "generated": { "line": 6, "column": 54 },
+          "source": "../src/main.js",
+          "original": { "line": 4, "column": 56 }
+        },
+        {
+          "generated": { "line": 8, "column": 0 },
+          "source": "../src/main.js",
+          "original": { "line": 7, "column": 0 }
+        },
+        {
+          "generated": { "line": 9, "column": 0 },
+          "source": "../src/main.js",
+          "original": { "line": 8, "column": 0 },
+          "name": "getButton"
+        },
+        {
+          "generated": { "line": 9, "column": 9 },
+          "source": "../src/main.js",
+          "original": { "line": 8, "column": 9 }
+        },
+        {
+          "generated": { "line": 9, "column": 10 },
+          "source": "../src/main.js",
+          "original": { "line": 8, "column": 10 },
+          "name": "addEventListener"
+        },
+        {
+          "generated": { "line": 9, "column": 26 },
+          "source": "../src/main.js",
+          "original": { "line": 8, "column": 26 }
+        },
+        {
+          "generated": { "line": 9, "column": 27 },
+          "source": "../src/main.js",
+          "original": { "line": 8, "column": 27 }
+        },
+        {
+          "generated": { "line": 9, "column": 34 },
+          "source": "../src/main.js",
+          "original": { "line": 8, "column": 34 }
+        },
+        {
+          "generated": { "line": 9, "column": 36 },
+          "source": "../src/main.js",
+          "original": { "line": 8, "column": 36 }
+        },
+        {
+          "generated": { "line": 9, "column": 46 },
+          "source": "../src/main.js",
+          "original": { "line": 8, "column": 46 },
+          "name": "event"
+        },
+        {
+          "generated": { "line": 9, "column": 51 },
+          "source": "../src/main.js",
+          "original": { "line": 8, "column": 51 }
+        },
+        {
+          "generated": { "line": 9, "column": 53 },
+          "source": "../src/main.js",
+          "original": { "line": 8, "column": 53 }
+        },
+        {
+          "generated": { "line": 10, "column": 2 },
+          "source": "../src/main.js",
+          "original": { "line": 9, "column": 2 },
+          "name": "event"
+        },
+        {
+          "generated": { "line": 10, "column": 7 },
+          "source": "../src/main.js",
+          "original": { "line": 9, "column": 7 }
+        },
+        {
+          "generated": { "line": 10, "column": 8 },
+          "source": "../src/main.js",
+          "original": { "line": 9, "column": 8 },
+          "name": "preventDefault"
+        },
+        {
+          "generated": { "line": 10, "column": 22 },
+          "source": "../src/main.js",
+          "original": { "line": 9, "column": 22 }
+        },
+        {
+          "generated": { "line": 10, "column": 23 },
+          "source": "../src/main.js",
+          "original": { "line": 9, "column": 23 }
+        },
+        {
+          "generated": { "line": 10, "column": 24 },
+          "source": "../src/main.js",
+          "original": { "line": 9, "column": 24 }
+        },
+        {
+          "generated": { "line": 10, "column": 25 },
+          "source": "../src/main.js",
+          "original": { "line": 9, "column": 25 }
+        },
+        {
+          "generated": { "line": 10, "column": 26 },
+          "source": "../src/main.js",
+          "original": { "line": 9, "column": 26 }
+        },
+        {
+          "generated": { "line": 12, "column": 2 },
+          "source": "../src/main.js",
+          "original": { "line": 11, "column": 2 }
+        },
+        {
+          "generated": { "line": 13, "column": 2 },
+          "source": "../src/main.js",
+          "original": { "line": 12, "column": 2 }
+        },
+        {
+          "generated": { "line": 13, "column": 6 },
+          "source": "../src/main.js",
+          "original": { "line": 12, "column": 8 },
+          "name": "formElements"
+        },
+        {
+          "generated": { "line": 13, "column": 18 },
+          "source": "../src/main.js",
+          "original": { "line": 12, "column": 20 }
+        },
+        {
+          "generated": { "line": 13, "column": 21 },
+          "source": "../src/main.js",
+          "original": { "line": 12, "column": 23 },
+          "name": "document"
+        },
+        {
+          "generated": { "line": 13, "column": 29 },
+          "source": "../src/main.js",
+          "original": { "line": 12, "column": 31 }
+        },
+        {
+          "generated": { "line": 13, "column": 30 },
+          "source": "../src/main.js",
+          "original": { "line": 12, "column": 32 },
+          "name": "getElementsByClassName"
+        },
+        {
+          "generated": { "line": 13, "column": 52 },
+          "source": "../src/main.js",
+          "original": { "line": 12, "column": 54 }
+        },
+        {
+          "generated": { "line": 13, "column": 53 },
+          "source": "../src/main.js",
+          "original": { "line": 12, "column": 55 }
+        },
+        {
+          "generated": { "line": 13, "column": 76 },
+          "source": "../src/main.js",
+          "original": { "line": 12, "column": 78 }
+        },
+        {
+          "generated": { "line": 13, "column": 77 },
+          "source": "../src/main.js",
+          "original": { "line": 12, "column": 79 }
+        },
+        {
+          "generated": { "line": 15, "column": 2 },
+          "source": "../src/main.js",
+          "original": { "line": 14, "column": 2 }
+        },
+        {
+          "generated": { "line": 16, "column": 2 },
+          "source": "../src/main.js",
+          "original": { "line": 15, "column": 2 }
+        },
+        {
+          "generated": { "line": 16, "column": 6 },
+          "source": "../src/main.js",
+          "original": { "line": 15, "column": 8 },
+          "name": "selectedIds"
+        },
+        {
+          "generated": { "line": 16, "column": 17 },
+          "source": "../src/main.js",
+          "original": { "line": 15, "column": 19 }
+        },
+        {
+          "generated": { "line": 16, "column": 20 },
+          "source": "../src/main.js",
+          "original": { "line": 15, "column": 22 }
+        },
+        {
+          "generated": { "line": 16, "column": 22 },
+          "source": "../src/main.js",
+          "original": { "line": 15, "column": 24 }
+        },
+        {
+          "generated": { "line": 18, "column": 2 },
+          "source": "../src/main.js",
+          "original": { "line": 17, "column": 2 }
+        },
+        {
+          "generated": { "line": 19, "column": 2 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 2 }
+        },
+        {
+          "generated": { "line": 19, "column": 7 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 7 }
+        },
+        {
+          "generated": { "line": 19, "column": 11 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 11 },
+          "name": "i"
+        },
+        {
+          "generated": { "line": 19, "column": 12 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 12 }
+        },
+        {
+          "generated": { "line": 19, "column": 15 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 15 }
+        },
+        {
+          "generated": { "line": 19, "column": 16 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 16 }
+        },
+        {
+          "generated": { "line": 19, "column": 18 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 18 },
+          "name": "i"
+        },
+        {
+          "generated": { "line": 19, "column": 19 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 19 }
+        },
+        {
+          "generated": { "line": 19, "column": 22 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 22 },
+          "name": "formElements"
+        },
+        {
+          "generated": { "line": 19, "column": 34 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 34 }
+        },
+        {
+          "generated": { "line": 19, "column": 35 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 35 },
+          "name": "length"
+        },
+        {
+          "generated": { "line": 19, "column": 41 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 41 }
+        },
+        {
+          "generated": { "line": 19, "column": 43 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 43 },
+          "name": "i"
+        },
+        {
+          "generated": { "line": 19, "column": 44 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 44 }
+        },
+        {
+          "generated": { "line": 19, "column": 46 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 46 }
+        },
+        {
+          "generated": { "line": 19, "column": 48 },
+          "source": "../src/main.js",
+          "original": { "line": 18, "column": 48 }
+        },
+        {
+          "generated": { "line": 20, "column": 4 },
+          "source": "../src/main.js",
+          "original": { "line": 19, "column": 4 }
+        },
+        {
+          "generated": { "line": 20, "column": 8 },
+          "source": "../src/main.js",
+          "original": { "line": 19, "column": 10 },
+          "name": "element"
+        },
+        {
+          "generated": { "line": 20, "column": 15 },
+          "source": "../src/main.js",
+          "original": { "line": 19, "column": 17 }
+        },
+        {
+          "generated": { "line": 20, "column": 18 },
+          "source": "../src/main.js",
+          "original": { "line": 19, "column": 20 },
+          "name": "formElements"
+        },
+        {
+          "generated": { "line": 20, "column": 30 },
+          "source": "../src/main.js",
+          "original": { "line": 19, "column": 32 }
+        },
+        {
+          "generated": { "line": 20, "column": 31 },
+          "source": "../src/main.js",
+          "original": { "line": 19, "column": 33 },
+          "name": "i"
+        },
+        {
+          "generated": { "line": 20, "column": 32 },
+          "source": "../src/main.js",
+          "original": { "line": 19, "column": 34 }
+        },
+        {
+          "generated": { "line": 20, "column": 33 },
+          "source": "../src/main.js",
+          "original": { "line": 19, "column": 35 }
+        },
+        {
+          "generated": { "line": 21, "column": 4 },
+          "source": "../src/main.js",
+          "original": { "line": 20, "column": 4 }
+        },
+        {
+          "generated": { "line": 21, "column": 8 },
+          "source": "../src/main.js",
+          "original": { "line": 20, "column": 8 },
+          "name": "element"
+        },
+        {
+          "generated": { "line": 21, "column": 15 },
+          "source": "../src/main.js",
+          "original": { "line": 20, "column": 15 }
+        },
+        {
+          "generated": { "line": 21, "column": 16 },
+          "source": "../src/main.js",
+          "original": { "line": 20, "column": 16 },
+          "name": "checked"
+        },
+        {
+          "generated": { "line": 21, "column": 23 },
+          "source": "../src/main.js",
+          "original": { "line": 20, "column": 23 }
+        },
+        {
+          "generated": { "line": 21, "column": 25 },
+          "source": "../src/main.js",
+          "original": { "line": 20, "column": 25 }
+        },
+        {
+          "generated": { "line": 22, "column": 6 },
+          "source": "../src/main.js",
+          "original": { "line": 21, "column": 6 },
+          "name": "selectedIds"
+        },
+        {
+          "generated": { "line": 22, "column": 17 },
+          "source": "../src/main.js",
+          "original": { "line": 21, "column": 17 }
+        },
+        {
+          "generated": { "line": 22, "column": 18 },
+          "source": "../src/main.js",
+          "original": { "line": 21, "column": 18 },
+          "name": "push"
+        },
+        {
+          "generated": { "line": 22, "column": 22 },
+          "source": "../src/main.js",
+          "original": { "line": 21, "column": 22 }
+        },
+        {
+          "generated": { "line": 22, "column": 23 },
+          "source": "../src/main.js",
+          "original": { "line": 21, "column": 23 },
+          "name": "element"
+        },
+        {
+          "generated": { "line": 22, "column": 30 },
+          "source": "../src/main.js",
+          "original": { "line": 21, "column": 30 }
+        },
+        {
+          "generated": { "line": 22, "column": 31 },
+          "source": "../src/main.js",
+          "original": { "line": 21, "column": 31 },
+          "name": "id"
+        },
+        {
+          "generated": { "line": 22, "column": 33 },
+          "source": "../src/main.js",
+          "original": { "line": 21, "column": 33 }
+        },
+        {
+          "generated": { "line": 22, "column": 34 },
+          "source": "../src/main.js",
+          "original": { "line": 21, "column": 34 }
+        },
+        {
+          "generated": { "line": 23, "column": 4 },
+          "source": "../src/main.js",
+          "original": { "line": 22, "column": 4 }
+        },
+        {
+          "generated": { "line": 24, "column": 2 },
+          "source": "../src/main.js",
+          "original": { "line": 23, "column": 2 }
+        },
+        {
+          "generated": { "line": 25, "column": 2 },
+          "source": "../src/main.js",
+          "original": { "line": 24, "column": 2 }
+        },
+        {
+          "generated": { "line": 25, "column": 6 },
+          "source": "../src/main.js",
+          "original": { "line": 24, "column": 6 },
+          "name": "selectedIds"
+        },
+        {
+          "generated": { "line": 25, "column": 17 },
+          "source": "../src/main.js",
+          "original": { "line": 24, "column": 17 }
+        },
+        {
+          "generated": { "line": 25, "column": 18 },
+          "source": "../src/main.js",
+          "original": { "line": 24, "column": 18 },
+          "name": "length"
+        },
+        {
+          "generated": { "line": 25, "column": 24 },
+          "source": "../src/main.js",
+          "original": { "line": 24, "column": 24 }
+        },
+        {
+          "generated": { "line": 25, "column": 28 },
+          "source": "../src/main.js",
+          "original": { "line": 24, "column": 28 }
+        },
+        {
+          "generated": { "line": 25, "column": 29 },
+          "source": "../src/main.js",
+          "original": { "line": 24, "column": 29 }
+        },
+        {
+          "generated": { "line": 25, "column": 31 },
+          "source": "../src/main.js",
+          "original": { "line": 24, "column": 31 }
+        },
+        {
+          "generated": { "line": 26, "column": 4 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 4 }
+        },
+        {
+          "generated": { "line": 26, "column": 8 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 8 },
+          "name": "newPlant"
+        },
+        {
+          "generated": { "line": 26, "column": 16 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 16 }
+        },
+        {
+          "generated": { "line": 26, "column": 19 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 19 }
+        },
+        {
+          "generated": { "line": 26, "column": 23 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 23 },
+          "name": "PlantRecomendation"
+        },
+        {
+          "generated": { "line": 26, "column": 44 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 41 }
+        },
+        {
+          "generated": { "line": 26, "column": 45 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 42 }
+        },
+        {
+          "generated": { "line": 27, "column": 6 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 44 },
+          "name": "location"
+        },
+        {
+          "generated": { "line": 27, "column": 14 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 52 }
+        },
+        {
+          "generated": { "line": 27, "column": 16 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 54 },
+          "name": "selectedIds"
+        },
+        {
+          "generated": { "line": 27, "column": 27 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 65 }
+        },
+        {
+          "generated": { "line": 27, "column": 28 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 66 }
+        },
+        {
+          "generated": { "line": 27, "column": 29 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 67 }
+        },
+        {
+          "generated": { "line": 27, "column": 30 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 68 }
+        },
+        {
+          "generated": { "line": 28, "column": 6 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 70 },
+          "name": "soil"
+        },
+        {
+          "generated": { "line": 28, "column": 10 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 74 }
+        },
+        {
+          "generated": { "line": 28, "column": 12 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 76 },
+          "name": "selectedIds"
+        },
+        {
+          "generated": { "line": 28, "column": 23 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 87 }
+        },
+        {
+          "generated": { "line": 28, "column": 24 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 88 }
+        },
+        {
+          "generated": { "line": 28, "column": 25 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 89 }
+        },
+        {
+          "generated": { "line": 28, "column": 26 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 90 }
+        },
+        {
+          "generated": { "line": 29, "column": 6 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 92 },
+          "name": "toxicity"
+        },
+        {
+          "generated": { "line": 29, "column": 14 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 100 }
+        },
+        {
+          "generated": { "line": 29, "column": 16 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 102 },
+          "name": "selectedIds"
+        },
+        {
+          "generated": { "line": 29, "column": 27 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 113 }
+        },
+        {
+          "generated": { "line": 29, "column": 28 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 114 }
+        },
+        {
+          "generated": { "line": 29, "column": 29 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 115 }
+        },
+        {
+          "generated": { "line": 29, "column": 30 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 116 }
+        },
+        {
+          "generated": { "line": 30, "column": 6 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 118 },
+          "name": "pot"
+        },
+        {
+          "generated": { "line": 30, "column": 9 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 121 }
+        },
+        {
+          "generated": { "line": 30, "column": 11 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 123 },
+          "name": "selectedIds"
+        },
+        {
+          "generated": { "line": 30, "column": 22 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 134 }
+        },
+        {
+          "generated": { "line": 30, "column": 23 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 135 }
+        },
+        {
+          "generated": { "line": 30, "column": 24 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 136 }
+        },
+        {
+          "generated": { "line": 30, "column": 25 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 137 }
+        },
+        {
+          "generated": { "line": 31, "column": 6 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 139 },
+          "name": "style"
+        },
+        {
+          "generated": { "line": 31, "column": 11 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 144 }
+        },
+        {
+          "generated": { "line": 31, "column": 13 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 146 },
+          "name": "selectedIds"
+        },
+        {
+          "generated": { "line": 31, "column": 24 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 157 }
+        },
+        {
+          "generated": { "line": 31, "column": 25 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 158 }
+        },
+        {
+          "generated": { "line": 31, "column": 26 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 159 }
+        },
+        {
+          "generated": { "line": 32, "column": 4 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 161 }
+        },
+        {
+          "generated": { "line": 32, "column": 5 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 162 }
+        },
+        {
+          "generated": { "line": 32, "column": 6 },
+          "source": "../src/main.js",
+          "original": { "line": 25, "column": 163 }
+        },
+        {
+          "generated": { "line": 33, "column": 4 },
+          "source": "../src/main.js",
+          "original": { "line": 26, "column": 4 }
+        },
+        {
+          "generated": { "line": 34, "column": 4 },
+          "source": "../src/main.js",
+          "original": { "line": 27, "column": 4 },
+          "name": "console"
+        },
+        {
+          "generated": { "line": 34, "column": 11 },
+          "source": "../src/main.js",
+          "original": { "line": 27, "column": 11 }
+        },
+        {
+          "generated": { "line": 34, "column": 12 },
+          "source": "../src/main.js",
+          "original": { "line": 27, "column": 12 },
+          "name": "log"
+        },
+        {
+          "generated": { "line": 34, "column": 15 },
+          "source": "../src/main.js",
+          "original": { "line": 27, "column": 15 }
+        },
+        {
+          "generated": { "line": 34, "column": 16 },
+          "source": "../src/main.js",
+          "original": { "line": 27, "column": 16 }
+        },
+        {
+          "generated": { "line": 34, "column": 49 },
+          "source": "../src/main.js",
+          "original": { "line": 27, "column": 49 }
+        },
+        {
+          "generated": { "line": 34, "column": 51 },
+          "source": "../src/main.js",
+          "original": { "line": 27, "column": 51 },
+          "name": "newPlant"
+        },
+        {
+          "generated": { "line": 34, "column": 59 },
+          "source": "../src/main.js",
+          "original": { "line": 27, "column": 59 }
+        },
+        {
+          "generated": { "line": 34, "column": 60 },
+          "source": "../src/main.js",
+          "original": { "line": 27, "column": 60 }
+        },
+        {
+          "generated": { "line": 35, "column": 2 },
+          "source": "../src/main.js",
+          "original": { "line": 28, "column": 2 }
+        },
+        {
+          "generated": { "line": 36, "column": 0 },
+          "source": "../src/main.js",
+          "original": { "line": 30, "column": 0 }
+        },
+        {
+          "generated": { "line": 36, "column": 1 },
+          "source": "../src/main.js",
+          "original": { "line": 30, "column": 1 }
+        },
+        {
+          "generated": { "line": 36, "column": 2 },
+          "source": "../src/main.js",
+          "original": { "line": 30, "column": 2 }
+        }
+      ],
+      "sources": {
+        "../src/main.js": "import PlantRecomendation from \"./Modules/plant-builder\";\n\n// Obtener el botón \"Get\" por su ID\nconst getButton = document.querySelector(\".get--button\");\n\n\n// Agregar un evento de clic al botón \"Get\"\ngetButton.addEventListener(\"click\", function (event) {\n  event.preventDefault(); // Evitar el envío del formulario\n\n  // Obtener todos los elementos de formulario por su clase\n  const formElements = document.getElementsByClassName(\"plants--form__answere\");\n\n  // Crear un array para almacenar los IDs de los elementos seleccionados\n  const selectedIds = [];\n\n  // Recorrer los elementos de formulario para verificar cuáles están seleccionados\n  for (let i = 0; i < formElements.length; i++) {\n    const element = formElements[i];\n    if (element.checked) {\n      selectedIds.push(element.id);\n    }\n  }\n  if (selectedIds.length != 0) {\n    let newPlant = new PlantRecomendation({ location: selectedIds[0], soil: selectedIds[1], toxicity: selectedIds[2], pot: selectedIds[3], style: selectedIds[4] });\n    // Aquí puedes realizar cualquier acción que desees con los IDs de los elementos seleccionados\n    console.log(\"IDs de elementos seleccionados:\", newPlant);\n  }\n\n});\n\n\n\n\n\n\n"
+      },
+      "lineCount": null
+    }
+  },
+  "error": null,
+  "hash": "53f359aa3d2907a011be22af7148811d",
+  "cacheData": { "env": {} }
+}
