@@ -98,7 +98,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({14:[function(require,module,exports) {
+})({6:[function(require,module,exports) {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -137,7 +137,7 @@ var PlantRecomendation = function () {
 }();
 
 module.exports = PlantRecomendation;
-},{}],15:[function(require,module,exports) {
+},{}],7:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -149,19 +149,16 @@ function sheetBuilder() {
 
   sheetContainer.innerHTML = '';
 
-  // Create and insert the title element
   var titleElement = document.createElement('h2');
   titleElement.textContent = plantInfo.plant;
   sheetContainer.appendChild(titleElement);
 
-  // Create and insert the container div for the images
   var imageContainer = document.createElement('div');
   imageContainer.id = 'imageContainer';
 
-  // Create and insert individual image elements (you can loop through an array of image URLs)
   var potImg = document.createElement('img');
   if (plantInfo.pot === 'simple-ceramic-too') {
-    potImg.src = 'images/simple-ceramic-pot.png';
+    potImg.src = './assets/images/simple-ceramic-pot.png';
   } else {
     potImg.src = 'images/' + plantInfo.pot + '.png';
   }
@@ -177,7 +174,6 @@ function sheetBuilder() {
 
   sheetContainer.appendChild(imageContainer);
 
-  // Create and insert the recommendation details
   var detailsElement = document.createElement('div');
 
   var nameElement = document.createElement('p');
@@ -192,19 +188,11 @@ function sheetBuilder() {
   potElement.textContent = 'Pot: ' + plantInfo.pot;
   detailsElement.appendChild(potElement);
 
-  // const colorElement = document.createElement('p');
-  // colorElement.textContent = `Color: ${recommendation.pot.color}`;
-  // detailsElement.appendChild(colorElement);
-
-  // const extrasElement = document.createElement('p');
-  // extrasElement.textContent = `Extras: ${recommendation.extras.join(', ')}`;
-  // detailsElement.appendChild(extrasElement);
-
   sheetContainer.appendChild(detailsElement);
 }
 
 exports.default = sheetBuilder;
-},{}],11:[function(require,module,exports) {
+},{}],4:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -370,8 +358,8 @@ function formObject() {
       // Aquí puedes realizar cualquier acción que desees con los IDs de los elementos seleccionados
       console.log("Plant Recomendation:", newPlant);
       console.log("IDs de elementos seleccionados:", selectedIds);
-      (0, _infoSheet2.default)();
       localStorage.setItem("plant-info", JSON.stringify(newPlant));
+      (0, _infoSheet2.default)();
     }
   } else {
     // Si no están completados, mostrar un mensaje de error
@@ -379,7 +367,7 @@ function formObject() {
   }
 }
 exports.default = formObject;
-},{"./plant-builder":14,"./info-sheet":15}],6:[function(require,module,exports) {
+},{"./plant-builder":6,"./info-sheet":7}],3:[function(require,module,exports) {
 "use strict";
 
 var _plantObject = require("./Modules/plant-object");
@@ -398,7 +386,7 @@ getButton.addEventListener("click", function (event) {
   event.preventDefault(); // Evitar el envío del formulario
   (0, _plantObject2.default)();
 });
-},{"./Modules/plant-object":11}],16:[function(require,module,exports) {
+},{"./Modules/plant-object":4}],10:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -427,7 +415,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '60167' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '62176' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -568,5 +556,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[16,6], null)
+},{}]},{},[10,3], null)
 //# sourceMappingURL=/main.779bce60.map

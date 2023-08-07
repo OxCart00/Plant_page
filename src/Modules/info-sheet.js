@@ -4,35 +4,31 @@ function sheetBuilder() {
 
   sheetContainer.innerHTML = '';
   
-  // Create and insert the title element
   const titleElement = document.createElement('h2');
   titleElement.textContent = plantInfo.plant;
   sheetContainer.appendChild(titleElement);
 
-  // Create and insert the container div for the images
   const imageContainer = document.createElement('div');
   imageContainer.id = 'imageContainer';
 
-  // Create and insert individual image elements (you can loop through an array of image URLs)
   const potImg = document.createElement('img');
   if (plantInfo.pot === 'simple-ceramic-too') {
-  potImg.src = 'images/simple-ceramic-pot.png';
+  potImg.src = './assets/images/simple-ceramic-pot.png';
   }else{
-    potImg.src = `images/${plantInfo.pot}.png`;
+    potImg.src = `./assets/images/${plantInfo.pot}.png`;
   }
   imageContainer.appendChild(potImg);
 
   const soilImg = document.createElement('img');
-  soilImg.src = `images/soil-${plantInfo.soil}.png`;
+  soilImg.src = `./assets/images/soil-${plantInfo.soil}.png`;
   imageContainer.appendChild(soilImg);
 
   const plantImg = document.createElement('img');
-  plantImg.src = `images/plant-${plantInfo.plant}.png`;
+  plantImg.src = `./assets/images/plant-${plantInfo.plant}.png`;
   imageContainer.appendChild(plantImg);
 
   sheetContainer.appendChild(imageContainer);
 
-  // Create and insert the recommendation details
   const detailsElement = document.createElement('div');
 
   const nameElement = document.createElement('p');
@@ -46,14 +42,6 @@ function sheetBuilder() {
   const potElement = document.createElement('p');
   potElement.textContent = `Pot: ${plantInfo.pot}`;
   detailsElement.appendChild(potElement);
-
-  // const colorElement = document.createElement('p');
-  // colorElement.textContent = `Color: ${recommendation.pot.color}`;
-  // detailsElement.appendChild(colorElement);
-
-  // const extrasElement = document.createElement('p');
-  // extrasElement.textContent = `Extras: ${recommendation.extras.join(', ')}`;
-  // detailsElement.appendChild(extrasElement);
 
   sheetContainer.appendChild(detailsElement);
 }

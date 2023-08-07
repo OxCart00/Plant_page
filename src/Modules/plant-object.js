@@ -152,8 +152,8 @@ function formObject() {
         // Aquí puedes realizar cualquier acción que desees con los IDs de los elementos seleccionados
         console.log("Plant Recomendation:", newPlant);
         console.log("IDs de elementos seleccionados:", selectedIds);
-        sheetBuilder();
         localStorage.setItem("plant-info", JSON.stringify(newPlant));
+        sheetBuilder();
       } 
       }else {
         // Si no están completados, mostrar un mensaje de error
