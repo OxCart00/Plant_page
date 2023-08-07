@@ -158,7 +158,7 @@ function sheetBuilder() {
 
   var potImg = document.createElement('img');
   if (plantInfo.pot === 'simple-ceramic-too') {
-    potImg.src = './assets/images/simple-ceramic-pot.png';
+    potImg.src = 'images/simple-ceramic-pot.png';
   } else {
     potImg.src = 'images/' + plantInfo.pot + '.png';
   }
@@ -415,7 +415,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '62176' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '63022' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

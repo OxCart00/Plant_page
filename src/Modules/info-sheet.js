@@ -13,18 +13,18 @@ function sheetBuilder() {
 
   const potImg = document.createElement('img');
   if (plantInfo.pot === 'simple-ceramic-too') {
-  potImg.src = './assets/images/simple-ceramic-pot.png';
+  potImg.src = 'images/simple-ceramic-pot.png';
   }else{
-    potImg.src = `./assets/images/${plantInfo.pot}.png`;
+    potImg.src = `images/${plantInfo.pot}.png`;
   }
   imageContainer.appendChild(potImg);
 
   const soilImg = document.createElement('img');
-  soilImg.src = `./assets/images/soil-${plantInfo.soil}.png`;
+  soilImg.src = `images/soil-${plantInfo.soil}.png`;
   imageContainer.appendChild(soilImg);
 
   const plantImg = document.createElement('img');
-  plantImg.src = `./assets/images/plant-${plantInfo.plant}.png`;
+  plantImg.src = `images/plant-${plantInfo.plant}.png`;
   imageContainer.appendChild(plantImg);
 
   sheetContainer.appendChild(imageContainer);
