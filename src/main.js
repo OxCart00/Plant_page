@@ -1,11 +1,24 @@
 import formObject from "./Modules/plant-object";
-// Obtener el botón "Get" por su ID
+
 const getButton = document.querySelector(".get--button");
-// Obtener todos los elementos de formulario por su clase
+const clearButton = document.querySelector(".clear--button");
+
+const sheetContainer = document.querySelector('.info-sheet--container');
+const formulario = document.querySelector('.plants--form');
+
+
 
 
 // Agregar un evento de clic al botón "Get"
 getButton.addEventListener("click", function (event) {
-  event.preventDefault(); // Evitar el envío del formulario
-formObject();
+  event.preventDefault();
+  formObject();
+});
+
+// Agregar un evento de clic al botón "Clear"
+clearButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  sheetContainer.style.backgroundColor = 'white';
+  sheetContainer.innerHTML = '';
+  formulario.reset();
 });

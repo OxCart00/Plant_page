@@ -147,6 +147,7 @@ function sheetBuilder() {
   var plantInfo = JSON.parse(localStorage.getItem('plant-info'));
   var sheetContainer = document.querySelector('.info-sheet--container');
 
+  sheetContainer.style.backgroundColor = '#7f03fc';
   sheetContainer.innerHTML = '';
 
   var titleElement = document.createElement('h2');
@@ -159,6 +160,10 @@ function sheetBuilder() {
   var potImg = document.createElement('img');
   if (plantInfo.pot === 'simple-ceramic-too') {
     potImg.src = 'images/simple-ceramic-pot.png';
+  }if (plantInfo.pot === 'simple-decorated-ceramic-too') {
+    potImg.src = 'images/simple-decorated-ceramic-pot.png';
+  }if (plantInfo.pot === 'painted-decorated-ceramic-too') {
+    potImg.src = 'images/painted-decorated-ceramic-pot.png';
   } else {
     potImg.src = 'images/' + plantInfo.pot + '.png';
   }
@@ -250,19 +255,19 @@ function formObject() {
         } else {
           if (selectedIds[3] === 'clay-pot') {
             if (selectedIds[4] === 'simple') {
-              newPlant = new _plantBuilder2.default({ plant: 'boston-fern', soil: 'drainage', pot: 'simple-clay-pot' });
+              newPlant = new _plantBuilder2.default({ plant: 'fern', soil: 'drainage', pot: 'simple-clay-pot' });
             } else if (selectedIds[4] === 'simple-decorated') {
-              newPlant = new _plantBuilder2.default({ plant: 'boston-fern', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
+              newPlant = new _plantBuilder2.default({ plant: 'fern', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
             } else {
-              newPlant = new _plantBuilder2.default({ plant: 'boston-fern', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
+              newPlant = new _plantBuilder2.default({ plant: 'fern', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
             }
           } else {
             if (selectedIds[4] === 'simple') {
-              newPlant = new _plantBuilder2.default({ plant: 'boston-fern', soil: selectedIds[1], pot: "simple-" + selectedIds[3] });
+              newPlant = new _plantBuilder2.default({ plant: 'fern', soil: selectedIds[1], pot: "simple-" + selectedIds[3] });
             } else if (selectedIds[4] === 'simple-decorated') {
-              newPlant = new _plantBuilder2.default({ plant: 'boston-fern', soil: selectedIds[1], pot: "simple-decorated-" + selectedIds[3] });
+              newPlant = new _plantBuilder2.default({ plant: 'fern', soil: selectedIds[1], pot: "simple-decorated-" + selectedIds[3] });
             } else {
-              newPlant = new _plantBuilder2.default({ plant: 'boston-fern', soil: selectedIds[1], pot: "painted-decorated-" + selectedIds[3] });
+              newPlant = new _plantBuilder2.default({ plant: 'fern', soil: selectedIds[1], pot: "painted-decorated-" + selectedIds[3] });
             }
           }
         }
@@ -308,19 +313,19 @@ function formObject() {
         if (selectedIds[2] === 'toxic-plant') {
           if (selectedIds[3] === 'clay-pot') {
             if (selectedIds[4] === 'simple') {
-              newPlant = new _plantBuilder2.default({ plant: 'aloe-vera', soil: 'drainage', pot: 'simple-clay-pot' });
+              newPlant = new _plantBuilder2.default({ plant: 'aloe', soil: 'drainage', pot: 'simple-clay-pot' });
             } else if (selectedIds[4] === 'simple-decorated') {
-              newPlant = new _plantBuilder2.default({ plant: 'aloe-vera', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
+              newPlant = new _plantBuilder2.default({ plant: 'aloe', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
             } else {
-              newPlant = new _plantBuilder2.default({ plant: 'aloe-vera', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
+              newPlant = new _plantBuilder2.default({ plant: 'aloe', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
             }
           } else {
             if (selectedIds[4] === 'simple') {
-              newPlant = new _plantBuilder2.default({ plant: 'aloe-vera', soil: selectedIds[1], pot: "simple-" + selectedIds[3] });
+              newPlant = new _plantBuilder2.default({ plant: 'aloe', soil: selectedIds[1], pot: "simple-" + selectedIds[3] });
             } else if (selectedIds[4] === 'simple-decorated') {
-              newPlant = new _plantBuilder2.default({ plant: 'aloe-vera', soil: selectedIds[1], pot: "simple-decorated-" + selectedIds[3] });
+              newPlant = new _plantBuilder2.default({ plant: 'aloe', soil: selectedIds[1], pot: "simple-decorated-" + selectedIds[3] });
             } else {
-              newPlant = new _plantBuilder2.default({ plant: 'aloe-vera', soil: selectedIds[1], pot: "painted-decorated-" + selectedIds[3] });
+              newPlant = new _plantBuilder2.default({ plant: 'aloe', soil: selectedIds[1], pot: "painted-decorated-" + selectedIds[3] });
             }
           }
         } else {
@@ -376,15 +381,24 @@ var _plantObject2 = _interopRequireDefault(_plantObject);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// Obtener el botón "Get" por su ID
 var getButton = document.querySelector(".get--button");
-// Obtener todos los elementos de formulario por su clase
+var clearButton = document.querySelector(".clear--button");
 
+var sheetContainer = document.querySelector('.info-sheet--container');
+var formulario = document.querySelector('.plants--form');
 
 // Agregar un evento de clic al botón "Get"
 getButton.addEventListener("click", function (event) {
-  event.preventDefault(); // Evitar el envío del formulario
+  event.preventDefault();
   (0, _plantObject2.default)();
+});
+
+// Agregar un evento de clic al botón "Clear"
+clearButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  sheetContainer.style.backgroundColor = 'white';
+  sheetContainer.innerHTML = '';
+  formulario.reset();
 });
 },{"./Modules/plant-object":4}],10:[function(require,module,exports) {
 var global = arguments[3];
@@ -415,7 +429,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '63022' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '64674' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

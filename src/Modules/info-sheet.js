@@ -2,8 +2,10 @@ function sheetBuilder() {
   const plantInfo = JSON.parse(localStorage.getItem('plant-info'));
   const sheetContainer = document.querySelector('.info-sheet--container');
 
+
+  sheetContainer.style.backgroundColor = '#7f03fc';
   sheetContainer.innerHTML = '';
-  
+
   const titleElement = document.createElement('h2');
   titleElement.textContent = plantInfo.plant;
   sheetContainer.appendChild(titleElement);
@@ -13,8 +15,14 @@ function sheetBuilder() {
 
   const potImg = document.createElement('img');
   if (plantInfo.pot === 'simple-ceramic-too') {
-  potImg.src = 'images/simple-ceramic-pot.png';
-  }else{
+    potImg.src = 'images/simple-ceramic-pot.png';
+  } 
+  if (plantInfo.pot === 'simple-decorated-ceramic-too') {
+    potImg.src = 'images/simple-decorated-ceramic-pot.png';
+  }
+  if (plantInfo.pot === 'painted-decorated-ceramic-too') {
+    potImg.src = 'images/painted-decorated-ceramic-pot.png';
+  } else {
     potImg.src = `images/${plantInfo.pot}.png`;
   }
   imageContainer.appendChild(potImg);

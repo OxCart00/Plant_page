@@ -42,19 +42,19 @@ function formObject() {
           } else {
             if (selectedIds[3] === 'clay-pot') {
               if (selectedIds[4] === 'simple') {
-                newPlant = new PlantRecomendation({ plant: 'boston-fern', soil: 'drainage', pot: 'simple-clay-pot' });
+                newPlant = new PlantRecomendation({ plant: 'fern', soil: 'drainage', pot: 'simple-clay-pot' });
               } else if (selectedIds[4] === 'simple-decorated') {
-                newPlant = new PlantRecomendation({ plant: 'boston-fern', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
+                newPlant = new PlantRecomendation({ plant: 'fern', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
               } else {
-                newPlant = new PlantRecomendation({ plant: 'boston-fern', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
+                newPlant = new PlantRecomendation({ plant: 'fern', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
               }
             } else {
               if (selectedIds[4] === 'simple') {
-                newPlant = new PlantRecomendation({ plant: 'boston-fern', soil: selectedIds[1], pot: `simple-${selectedIds[3]}` });
+                newPlant = new PlantRecomendation({ plant: 'fern', soil: selectedIds[1], pot: `simple-${selectedIds[3]}` });
               } else if (selectedIds[4] === 'simple-decorated') {
-                newPlant = new PlantRecomendation({ plant: 'boston-fern', soil: selectedIds[1], pot: `simple-decorated-${selectedIds[3]}` });
+                newPlant = new PlantRecomendation({ plant: 'fern', soil: selectedIds[1], pot: `simple-decorated-${selectedIds[3]}` });
               } else {
-                newPlant = new PlantRecomendation({ plant: 'boston-fern', soil: selectedIds[1], pot: `painted-decorated-${selectedIds[3]}` });
+                newPlant = new PlantRecomendation({ plant: 'fern', soil: selectedIds[1], pot: `painted-decorated-${selectedIds[3]}` });
               }
             }
           }
@@ -102,19 +102,19 @@ function formObject() {
           if (selectedIds[2] === 'toxic-plant') {
             if (selectedIds[3] === 'clay-pot') {
               if (selectedIds[4] === 'simple') {
-                newPlant = new PlantRecomendation({ plant: 'aloe-vera', soil: 'drainage', pot: 'simple-clay-pot' });
+                newPlant = new PlantRecomendation({ plant: 'aloe', soil: 'drainage', pot: 'simple-clay-pot' });
               } else if (selectedIds[4] === 'simple-decorated') {
-                newPlant = new PlantRecomendation({ plant: 'aloe-vera', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
+                newPlant = new PlantRecomendation({ plant: 'aloe', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
               } else {
-                newPlant = new PlantRecomendation({ plant: 'aloe-vera', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
+                newPlant = new PlantRecomendation({ plant: 'aloe', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
               }
             } else {
               if (selectedIds[4] === 'simple') {
-                newPlant = new PlantRecomendation({ plant: 'aloe-vera', soil: selectedIds[1], pot: `simple-${selectedIds[3]}` });
+                newPlant = new PlantRecomendation({ plant: 'aloe', soil: selectedIds[1], pot: `simple-${selectedIds[3]}` });
               } else if (selectedIds[4] === 'simple-decorated') {
-                newPlant = new PlantRecomendation({ plant: 'aloe-vera', soil: selectedIds[1], pot: `simple-decorated-${selectedIds[3]}` });
+                newPlant = new PlantRecomendation({ plant: 'aloe', soil: selectedIds[1], pot: `simple-decorated-${selectedIds[3]}` });
               } else {
-                newPlant = new PlantRecomendation({ plant: 'aloe-vera', soil: selectedIds[1], pot: `painted-decorated-${selectedIds[3]}` });
+                newPlant = new PlantRecomendation({ plant: 'aloe', soil: selectedIds[1], pot: `painted-decorated-${selectedIds[3]}` });
               }
             }
           } else {
