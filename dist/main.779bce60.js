@@ -98,7 +98,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({12:[function(require,module,exports) {
+})({14:[function(require,module,exports) {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -137,7 +137,7 @@ var PlantRecomendation = function () {
 }();
 
 module.exports = PlantRecomendation;
-},{}],11:[function(require,module,exports) {
+},{}],15:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -204,7 +204,7 @@ function sheetBuilder() {
 }
 
 exports.default = sheetBuilder;
-},{}],10:[function(require,module,exports) {
+},{}],11:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -379,7 +379,7 @@ function formObject() {
   }
 }
 exports.default = formObject;
-},{"./plant-builder":12,"./info-sheet":11}],6:[function(require,module,exports) {
+},{"./plant-builder":14,"./info-sheet":15}],6:[function(require,module,exports) {
 "use strict";
 
 var _plantObject = require("./Modules/plant-object");
@@ -398,7 +398,7 @@ getButton.addEventListener("click", function (event) {
   event.preventDefault(); // Evitar el envío del formulario
   (0, _plantObject2.default)();
 });
-},{"./Modules/plant-object":10}],14:[function(require,module,exports) {
+},{"./Modules/plant-object":11}],16:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -427,7 +427,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '58697' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '60167' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -568,5 +568,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[14,6], null)
+},{}]},{},[16,6], null)
 //# sourceMappingURL=/main.779bce60.map
