@@ -1,6 +1,9 @@
 function sheetBuilder() {
   const plantInfo = JSON.parse(localStorage.getItem('plant-info'));
   const sheetContainer = document.querySelector('.info-sheet--container');
+
+  sheetContainer.innerHTML = '';
+  
   // Create and insert the title element
   const titleElement = document.createElement('h2');
   titleElement.textContent = plantInfo.plant;
@@ -52,7 +55,7 @@ function sheetBuilder() {
   // extrasElement.textContent = `Extras: ${recommendation.extras.join(', ')}`;
   // detailsElement.appendChild(extrasElement);
 
-  // sheetContainer.appendChild(detailsElement);
+  sheetContainer.appendChild(detailsElement);
 }
 
 export default sheetBuilder;
