@@ -98,7 +98,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({17:[function(require,module,exports) {
+})({12:[function(require,module,exports) {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -117,19 +117,19 @@ var PlantRecomendation = function () {
   }
 
   _createClass(PlantRecomendation, [{
-    key: "addMoss",
+    key: 'addMoss',
     value: function addMoss() {
-      this.moss = "moss-pole";
+      this.moss = 'moss-pole';
     }
   }, {
-    key: "addPebbles",
+    key: 'addPebbles',
     value: function addPebbles() {
-      this.pebbles = "pebbles";
+      this.pebbles = 'pebbles';
     }
   }, {
-    key: "addGreenies",
+    key: 'addGreenies',
     value: function addGreenies() {
-      this.greenies = "mini-plants";
+      this.greenies = 'mini-plants';
     }
   }]);
 
@@ -137,68 +137,59 @@ var PlantRecomendation = function () {
 }();
 
 module.exports = PlantRecomendation;
-},{}],18:[function(require,module,exports) {
-"use strict";
+},{}],11:[function(require,module,exports) {
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-function importAll(r) {
-  return r.keys().map(r);
-}
-
-var images = importAll(require.context('../images', false, /\.(png|jpe?g|svg)$/));
-
 function sheetBuilder() {
-  var plantInfo = JSON.parse(localStorage.getItem("plant-info"));
-  var sheetContainer = document.querySelector(".info-sheet--container");
-  sheetContainer.innerHTML = "";
+  var plantInfo = JSON.parse(localStorage.getItem('plant-info'));
+  var sheetContainer = document.querySelector('.info-sheet--container');
+
+  sheetContainer.innerHTML = '';
+
   // Create and insert the title element
-  var titleElement = document.createElement("h2");
+  var titleElement = document.createElement('h2');
   titleElement.textContent = plantInfo.plant;
   sheetContainer.appendChild(titleElement);
 
   // Create and insert the container div for the images
-  var imageContainer = document.createElement("div");
-  imageContainer.id = "imageContainer";
+  var imageContainer = document.createElement('div');
+  imageContainer.id = 'imageContainer';
 
   // Create and insert individual image elements (you can loop through an array of image URLs)
-  var potImg = document.createElement("img");
-  if (plantInfo.pot === "simple-ceramic-too") {
-    for (var i = 0; i < images.length; i++) {
-      if (images[i].includes('simple-ceramic-pot.png')) {
-        potImg.src = images[i];
-        break; // Detiene el bucle una vez que encuentra la imagen
-      }
-    }
+  var potImg = document.createElement('img');
+  if (plantInfo.pot === 'simple-ceramic-too') {
+    potImg.src = 'images/simple-ceramic-pot.png';
   } else {
-    potImg.src = "../images/" + plantInfo.pot + ".png";
+    potImg.src = 'images/' + plantInfo.pot + '.png';
   }
   imageContainer.appendChild(potImg);
 
-  var soilImg = document.createElement("img");
-  soilImg.src = "../images/soil-" + plantInfo.soil + ".png";
+  var soilImg = document.createElement('img');
+  soilImg.src = 'images/soil-' + plantInfo.soil + '.png';
   imageContainer.appendChild(soilImg);
 
-  var plantImg = document.createElement("img");
-  plantImg.src = "images/plant-" + plantInfo.plant + ".png";
+  var plantImg = document.createElement('img');
+  plantImg.src = 'images/plant-' + plantInfo.plant + '.png';
   imageContainer.appendChild(plantImg);
 
   sheetContainer.appendChild(imageContainer);
 
   // Create and insert the recommendation details
-  var detailsElement = document.createElement("div");
+  var detailsElement = document.createElement('div');
 
-  var nameElement = document.createElement("p");
-  nameElement.textContent = "Name: " + plantInfo.plant;
+  var nameElement = document.createElement('p');
+  nameElement.textContent = 'Name: ' + plantInfo.plant;
   detailsElement.appendChild(nameElement);
 
-  var soilElement = document.createElement("p");
-  soilElement.textContent = "Soil: " + plantInfo.soil;
+  var soilElement = document.createElement('p');
+  soilElement.textContent = 'Soil: ' + plantInfo.soil;
   detailsElement.appendChild(soilElement);
 
-  var potElement = document.createElement("p");
-  potElement.textContent = "Pot: " + plantInfo.pot;
+  var potElement = document.createElement('p');
+  potElement.textContent = 'Pot: ' + plantInfo.pot;
   detailsElement.appendChild(potElement);
 
   // const colorElement = document.createElement('p');
@@ -213,7 +204,7 @@ function sheetBuilder() {
 }
 
 exports.default = sheetBuilder;
-},{}],14:[function(require,module,exports) {
+},{}],10:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -232,7 +223,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var formElements = document.getElementsByClassName("plants--form__answere");
 // Obtener el formulario y los campos requeridos
-var formulario = document.querySelector(".plants--form");
+var formulario = document.querySelector('.plants--form');
 
 function formObject() {
   // Crear un array para almacenar los IDs de los elementos seleccionados
@@ -249,266 +240,123 @@ function formObject() {
       }
     }
     if (selectedIds.length >= 5) {
-      if (selectedIds[0] === "low-light-plant") {
-        if (selectedIds[2] === "toxic-plant") {
-          if (selectedIds[3] === "clay-pot") {
-            if (selectedIds[4] === "simple") {
-              newPlant = new _plantBuilder2.default({
-                plant: "peace-lily",
-                soil: "drainage",
-                pot: "simple-clay-pot"
-              });
-            } else if (selectedIds[4] === "simple-decorated") {
-              newPlant = new _plantBuilder2.default({
-                plant: "peace-lily",
-                soil: "drainage",
-                pot: "simple-decorated-clay-pot"
-              });
+      if (selectedIds[0] === 'low-light-plant') {
+        if (selectedIds[2] === 'toxic-plant') {
+          if (selectedIds[3] === 'clay-pot') {
+            if (selectedIds[4] === 'simple') {
+              newPlant = new _plantBuilder2.default({ plant: 'peace-lily', soil: 'drainage', pot: 'simple-clay-pot' });
+            } else if (selectedIds[4] === 'simple-decorated') {
+              newPlant = new _plantBuilder2.default({ plant: 'peace-lily', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
             } else {
-              newPlant = new _plantBuilder2.default({
-                plant: "peace-lily",
-                soil: "drainage",
-                pot: "painted-decorated-clay-pot"
-              });
+              newPlant = new _plantBuilder2.default({ plant: 'peace-lily', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
             }
           } else {
-            if (selectedIds[4] === "simple") {
-              newPlant = new _plantBuilder2.default({
-                plant: "sansevieria",
-                soil: selectedIds[1],
-                pot: "simple-" + selectedIds[3]
-              });
-            } else if (selectedIds[4] === "simple-decorated") {
-              newPlant = new _plantBuilder2.default({
-                plant: "sansevieria",
-                soil: selectedIds[1],
-                pot: "simple-decorated-" + selectedIds[3]
-              });
+            if (selectedIds[4] === 'simple') {
+              newPlant = new _plantBuilder2.default({ plant: 'sansevieria', soil: selectedIds[1], pot: "simple-" + selectedIds[3] });
+            } else if (selectedIds[4] === 'simple-decorated') {
+              newPlant = new _plantBuilder2.default({ plant: 'sansevieria', soil: selectedIds[1], pot: "simple-decorated-" + selectedIds[3] });
             } else {
-              newPlant = new _plantBuilder2.default({
-                plant: "sansevieria",
-                soil: selectedIds[1],
-                pot: "painted-decorated-" + selectedIds[3]
-              });
+              newPlant = new _plantBuilder2.default({ plant: 'sansevieria', soil: selectedIds[1], pot: "painted-decorated-" + selectedIds[3] });
             }
           }
         } else {
-          if (selectedIds[3] === "clay-pot") {
-            if (selectedIds[4] === "simple") {
-              newPlant = new _plantBuilder2.default({
-                plant: "boston-fern",
-                soil: "drainage",
-                pot: "simple-clay-pot"
-              });
-            } else if (selectedIds[4] === "simple-decorated") {
-              newPlant = new _plantBuilder2.default({
-                plant: "boston-fern",
-                soil: "drainage",
-                pot: "simple-decorated-clay-pot"
-              });
+          if (selectedIds[3] === 'clay-pot') {
+            if (selectedIds[4] === 'simple') {
+              newPlant = new _plantBuilder2.default({ plant: 'boston-fern', soil: 'drainage', pot: 'simple-clay-pot' });
+            } else if (selectedIds[4] === 'simple-decorated') {
+              newPlant = new _plantBuilder2.default({ plant: 'boston-fern', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
             } else {
-              newPlant = new _plantBuilder2.default({
-                plant: "boston-fern",
-                soil: "drainage",
-                pot: "painted-decorated-clay-pot"
-              });
+              newPlant = new _plantBuilder2.default({ plant: 'boston-fern', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
             }
           } else {
-            if (selectedIds[4] === "simple") {
-              newPlant = new _plantBuilder2.default({
-                plant: "boston-fern",
-                soil: selectedIds[1],
-                pot: "simple-" + selectedIds[3]
-              });
-            } else if (selectedIds[4] === "simple-decorated") {
-              newPlant = new _plantBuilder2.default({
-                plant: "boston-fern",
-                soil: selectedIds[1],
-                pot: "simple-decorated-" + selectedIds[3]
-              });
+            if (selectedIds[4] === 'simple') {
+              newPlant = new _plantBuilder2.default({ plant: 'boston-fern', soil: selectedIds[1], pot: "simple-" + selectedIds[3] });
+            } else if (selectedIds[4] === 'simple-decorated') {
+              newPlant = new _plantBuilder2.default({ plant: 'boston-fern', soil: selectedIds[1], pot: "simple-decorated-" + selectedIds[3] });
             } else {
-              newPlant = new _plantBuilder2.default({
-                plant: "boston-fern",
-                soil: selectedIds[1],
-                pot: "painted-decorated-" + selectedIds[3]
-              });
+              newPlant = new _plantBuilder2.default({ plant: 'boston-fern', soil: selectedIds[1], pot: "painted-decorated-" + selectedIds[3] });
             }
           }
         }
-      } else if (selectedIds[0] === "medium-light-plant") {
-        if (selectedIds[2] === "toxic-plant") {
-          if (selectedIds[3] === "clay-pot") {
-            if (selectedIds[4] === "simple") {
-              newPlant = new _plantBuilder2.default({
-                plant: "peace-lily",
-                soil: "drainage",
-                pot: "simple-clay-pot"
-              });
-            } else if (selectedIds[4] === "simple-decorated") {
-              newPlant = new _plantBuilder2.default({
-                plant: "peace-lily",
-                soil: "drainage",
-                pot: "simple-decorated-clay-pot"
-              });
+      } else if (selectedIds[0] === 'medium-light-plant') {
+        if (selectedIds[2] === 'toxic-plant') {
+          if (selectedIds[3] === 'clay-pot') {
+            if (selectedIds[4] === 'simple') {
+              newPlant = new _plantBuilder2.default({ plant: 'peace-lily', soil: 'drainage', pot: 'simple-clay-pot' });
+            } else if (selectedIds[4] === 'simple-decorated') {
+              newPlant = new _plantBuilder2.default({ plant: 'peace-lily', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
             } else {
-              newPlant = new _plantBuilder2.default({
-                plant: "peace-lily",
-                soil: "drainage",
-                pot: "painted-decorated-clay-pot"
-              });
+              newPlant = new _plantBuilder2.default({ plant: 'peace-lily', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
             }
           } else {
-            if (selectedIds[4] === "simple") {
-              newPlant = new _plantBuilder2.default({
-                plant: "aglaonema",
-                soil: selectedIds[1],
-                pot: "simple-" + selectedIds[3]
-              });
-            } else if (selectedIds[4] === "simple-decorated") {
-              newPlant = new _plantBuilder2.default({
-                plant: "aglaonema",
-                soil: selectedIds[1],
-                pot: "simple-decorated-" + selectedIds[3]
-              });
+            if (selectedIds[4] === 'simple') {
+              newPlant = new _plantBuilder2.default({ plant: 'aglaonema', soil: selectedIds[1], pot: "simple-" + selectedIds[3] });
+            } else if (selectedIds[4] === 'simple-decorated') {
+              newPlant = new _plantBuilder2.default({ plant: 'aglaonema', soil: selectedIds[1], pot: "simple-decorated-" + selectedIds[3] });
             } else {
-              newPlant = new _plantBuilder2.default({
-                plant: "aglaonema",
-                soil: selectedIds[1],
-                pot: "painted-decorated-" + selectedIds[3]
-              });
+              newPlant = new _plantBuilder2.default({ plant: 'aglaonema', soil: selectedIds[1], pot: "painted-decorated-" + selectedIds[3] });
             }
           }
         } else {
-          if (selectedIds[3] === "clay-pot") {
-            if (selectedIds[4] === "simple") {
-              newPlant = new _plantBuilder2.default({
-                plant: "peace-lily",
-                soil: "drainage",
-                pot: "simple-clay-pot"
-              });
-            } else if (selectedIds[4] === "simple-decorated") {
-              newPlant = new _plantBuilder2.default({
-                plant: "peace-lily",
-                soil: "drainage",
-                pot: "simple-decorated-clay-pot"
-              });
+          if (selectedIds[3] === 'clay-pot') {
+            if (selectedIds[4] === 'simple') {
+              newPlant = new _plantBuilder2.default({ plant: 'peace-lily', soil: 'drainage', pot: 'simple-clay-pot' });
+            } else if (selectedIds[4] === 'simple-decorated') {
+              newPlant = new _plantBuilder2.default({ plant: 'peace-lily', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
             } else {
-              newPlant = new _plantBuilder2.default({
-                plant: "peace-lily",
-                soil: "drainage",
-                pot: "painted-decorated-clay-pot"
-              });
+              newPlant = new _plantBuilder2.default({ plant: 'peace-lily', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
             }
           } else {
-            if (selectedIds[4] === "simple") {
-              newPlant = new _plantBuilder2.default({
-                plant: "monstera",
-                soil: selectedIds[1],
-                pot: "simple-" + selectedIds[3]
-              });
-            } else if (selectedIds[4] === "simple-decorated") {
-              newPlant = new _plantBuilder2.default({
-                plant: "monstera",
-                soil: selectedIds[1],
-                pot: "simple-decorated-" + selectedIds[3]
-              });
+            if (selectedIds[4] === 'simple') {
+              newPlant = new _plantBuilder2.default({ plant: 'monstera', soil: selectedIds[1], pot: "simple-" + selectedIds[3] });
+            } else if (selectedIds[4] === 'simple-decorated') {
+              newPlant = new _plantBuilder2.default({ plant: 'monstera', soil: selectedIds[1], pot: "simple-decorated-" + selectedIds[3] });
             } else {
-              newPlant = new _plantBuilder2.default({
-                plant: "monstera",
-                soil: selectedIds[1],
-                pot: "painted-decorated-" + selectedIds[3]
-              });
+              newPlant = new _plantBuilder2.default({ plant: 'monstera', soil: selectedIds[1], pot: "painted-decorated-" + selectedIds[3] });
             }
           }
         }
       } else {
-        if (selectedIds[2] === "toxic-plant") {
-          if (selectedIds[3] === "clay-pot") {
-            if (selectedIds[4] === "simple") {
-              newPlant = new _plantBuilder2.default({
-                plant: "aloe-vera",
-                soil: "drainage",
-                pot: "simple-clay-pot"
-              });
-            } else if (selectedIds[4] === "simple-decorated") {
-              newPlant = new _plantBuilder2.default({
-                plant: "aloe-vera",
-                soil: "drainage",
-                pot: "simple-decorated-clay-pot"
-              });
+        if (selectedIds[2] === 'toxic-plant') {
+          if (selectedIds[3] === 'clay-pot') {
+            if (selectedIds[4] === 'simple') {
+              newPlant = new _plantBuilder2.default({ plant: 'aloe-vera', soil: 'drainage', pot: 'simple-clay-pot' });
+            } else if (selectedIds[4] === 'simple-decorated') {
+              newPlant = new _plantBuilder2.default({ plant: 'aloe-vera', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
             } else {
-              newPlant = new _plantBuilder2.default({
-                plant: "aloe-vera",
-                soil: "drainage",
-                pot: "painted-decorated-clay-pot"
-              });
+              newPlant = new _plantBuilder2.default({ plant: 'aloe-vera', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
             }
           } else {
-            if (selectedIds[4] === "simple") {
-              newPlant = new _plantBuilder2.default({
-                plant: "aloe-vera",
-                soil: selectedIds[1],
-                pot: "simple-" + selectedIds[3]
-              });
-            } else if (selectedIds[4] === "simple-decorated") {
-              newPlant = new _plantBuilder2.default({
-                plant: "aloe-vera",
-                soil: selectedIds[1],
-                pot: "simple-decorated-" + selectedIds[3]
-              });
+            if (selectedIds[4] === 'simple') {
+              newPlant = new _plantBuilder2.default({ plant: 'aloe-vera', soil: selectedIds[1], pot: "simple-" + selectedIds[3] });
+            } else if (selectedIds[4] === 'simple-decorated') {
+              newPlant = new _plantBuilder2.default({ plant: 'aloe-vera', soil: selectedIds[1], pot: "simple-decorated-" + selectedIds[3] });
             } else {
-              newPlant = new _plantBuilder2.default({
-                plant: "aloe-vera",
-                soil: selectedIds[1],
-                pot: "painted-decorated-" + selectedIds[3]
-              });
+              newPlant = new _plantBuilder2.default({ plant: 'aloe-vera', soil: selectedIds[1], pot: "painted-decorated-" + selectedIds[3] });
             }
           }
         } else {
-          if (selectedIds[3] === "clay-pot") {
-            if (selectedIds[4] === "simple") {
-              newPlant = new _plantBuilder2.default({
-                plant: "cactus",
-                soil: "drainage",
-                pot: "simple-clay-pot"
-              });
-            } else if (selectedIds[4] === "simple-decorated") {
-              newPlant = new _plantBuilder2.default({
-                plant: "cactus",
-                soil: "drainage",
-                pot: "simple-decorated-clay-pot"
-              });
+          if (selectedIds[3] === 'clay-pot') {
+            if (selectedIds[4] === 'simple') {
+              newPlant = new _plantBuilder2.default({ plant: 'cactus', soil: 'drainage', pot: 'simple-clay-pot' });
+            } else if (selectedIds[4] === 'simple-decorated') {
+              newPlant = new _plantBuilder2.default({ plant: 'cactus', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
             } else {
-              newPlant = new _plantBuilder2.default({
-                plant: "cactus",
-                soil: "drainage",
-                pot: "painted-decorated-clay-pot"
-              });
+              newPlant = new _plantBuilder2.default({ plant: 'cactus', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
             }
           } else {
-            if (selectedIds[4] === "simple") {
-              newPlant = new _plantBuilder2.default({
-                plant: "cactus",
-                soil: selectedIds[1],
-                pot: "simple-" + selectedIds[3]
-              });
-            } else if (selectedIds[4] === "simple-decorated") {
-              newPlant = new _plantBuilder2.default({
-                plant: "cactus",
-                soil: selectedIds[1],
-                pot: "simple-decorated-" + selectedIds[3]
-              });
+            if (selectedIds[4] === 'simple') {
+              newPlant = new _plantBuilder2.default({ plant: 'cactus', soil: selectedIds[1], pot: "simple-" + selectedIds[3] });
+            } else if (selectedIds[4] === 'simple-decorated') {
+              newPlant = new _plantBuilder2.default({ plant: 'cactus', soil: selectedIds[1], pot: "simple-decorated-" + selectedIds[3] });
             } else {
-              newPlant = new _plantBuilder2.default({
-                plant: "cactus",
-                soil: selectedIds[1],
-                pot: "painted-decorated-" + selectedIds[3]
-              });
+              newPlant = new _plantBuilder2.default({ plant: 'cactus', soil: selectedIds[1], pot: "painted-decorated-" + selectedIds[3] });
             }
           }
         }
       }
       for (var _i = 5; _i < selectedIds.length; _i++) {
+
         if (selectedIds[_i] === "moss-pole") {
           newPlant.addMoss();
         }
@@ -527,11 +375,11 @@ function formObject() {
     }
   } else {
     // Si no están completados, mostrar un mensaje de error
-    alert("Please, complete the required questions to show your recommendation");
+    alert('Please, complete the required questions to show your recommendation');
   }
 }
 exports.default = formObject;
-},{"./plant-builder":17,"./info-sheet":18}],8:[function(require,module,exports) {
+},{"./plant-builder":12,"./info-sheet":11}],6:[function(require,module,exports) {
 "use strict";
 
 var _plantObject = require("./Modules/plant-object");
@@ -544,12 +392,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var getButton = document.querySelector(".get--button");
 // Obtener todos los elementos de formulario por su clase
 
+
 // Agregar un evento de clic al botón "Get"
 getButton.addEventListener("click", function (event) {
   event.preventDefault(); // Evitar el envío del formulario
   (0, _plantObject2.default)();
 });
-},{"./Modules/plant-object":14}],19:[function(require,module,exports) {
+},{"./Modules/plant-object":10}],14:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -578,7 +427,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '51826' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '58697' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -719,5 +568,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[19,8], null)
+},{}]},{},[14,6], null)
 //# sourceMappingURL=/main.779bce60.map
