@@ -160,9 +160,9 @@ function sheetBuilder() {
   var potImg = document.createElement('img');
   if (plantInfo.pot === 'simple-ceramic-too') {
     potImg.src = 'images/simple-ceramic-pot.png';
-  }if (plantInfo.pot === 'simple-decorated-ceramic-too') {
+  } else if (plantInfo.pot === 'simple-decorated-ceramic-too') {
     potImg.src = 'images/simple-decorated-ceramic-pot.png';
-  }if (plantInfo.pot === 'painted-decorated-ceramic-too') {
+  } else if (plantInfo.pot === 'painted-decorated-ceramic-too') {
     potImg.src = 'images/painted-decorated-ceramic-pot.png';
   } else {
     potImg.src = 'images/' + plantInfo.pot + '.png';
@@ -429,7 +429,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '64674' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '62785' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

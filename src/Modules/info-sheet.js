@@ -13,14 +13,12 @@ function sheetBuilder() {
   const imageContainer = document.createElement('div');
   imageContainer.id = 'imageContainer';
 
-  const potImg = document.createElement('img');
+  let potImg = document.createElement('img');
   if (plantInfo.pot === 'simple-ceramic-too') {
     potImg.src = 'images/simple-ceramic-pot.png';
-  } 
-  if (plantInfo.pot === 'simple-decorated-ceramic-too') {
+  } else if (plantInfo.pot === 'simple-decorated-ceramic-too') {
     potImg.src = 'images/simple-decorated-ceramic-pot.png';
-  }
-  if (plantInfo.pot === 'painted-decorated-ceramic-too') {
+  } else if (plantInfo.pot === 'painted-decorated-ceramic-too') {
     potImg.src = 'images/painted-decorated-ceramic-pot.png';
   } else {
     potImg.src = `images/${plantInfo.pot}.png`;
