@@ -151,6 +151,7 @@ Object.defineProperty(exports, "__esModule", {
 function sheetBuilder() {
   var plantInfo = JSON.parse(localStorage.getItem('plant-info'));
   var sheetContainer = document.querySelector('.info-sheet--container');
+  var rgtBlock = document.querySelector('.right--block');
   var detailsElement = document.createElement('div');
 
   sheetContainer.style.backgroundColor = '#7f03fc';
@@ -167,14 +168,14 @@ function sheetBuilder() {
   if (plantInfo.pot === 'simple-ceramic-too') {
     potImg.src = 'images/simple-ceramic-pot.png';
   } else if (plantInfo.pot === 'simple-decorated-ceramic-too') {
-    potImg.src = 'images/simple-decorated-ceramic-pot.png';
+    potImg.src = '../images/simple-decorated-ceramic-pot.png';
   } else if (plantInfo.pot === 'painted-decorated-ceramic-too') {
-    potImg.src = 'images/blue-painted-decorated-ceramic-pot.png';
+    potImg.src = '../images/blue-painted-decorated-ceramic-pot.png';
   } else {
     if (plantInfo.color) {
-      potImg.src = 'images/' + plantInfo.color + '-' + plantInfo.pot + '.png';
+      potImg.src = '../images/' + plantInfo.color + '-' + plantInfo.pot + '.png';
     } else {
-      potImg.src = 'images/' + plantInfo.pot + '.png';
+      potImg.src = '../images/' + plantInfo.pot + '.png';
     }
   }
   imageContainer.appendChild(potImg);
@@ -229,6 +230,16 @@ function sheetBuilder() {
 
   sheetContainer.appendChild(imageContainer);
   sheetContainer.appendChild(detailsElement);
+
+  var temp = document.getElementById('customize--button');
+
+  var customizeBtn = document.createElement('a');
+  customizeBtn.textContent = 'Customize!';
+  customizeBtn.id = 'customize--button';
+  customizeBtn.href = '../pages/customize.html';
+  if (!temp) {
+    rgtBlock.appendChild(customizeBtn);
+  }
 }
 
 exports.default = sheetBuilder;
@@ -473,7 +484,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50435' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57265' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

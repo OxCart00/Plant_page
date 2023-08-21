@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <title>Customize your plant</title>
+</head>
+
+<body>
+  <form class="plants--form">
+    <label>Choose your pot:</label>
+    <input type="radio" name="pot" value="Clay"> Clay
+    <input type="radio" name="pot" value="Ceramic"> Ceramic
+
+    <label>Pot decorations:</label>
+    <input type="checkbox" id="potDecorationToggle">
+    <span id="potDecorationText">No</span>
+
+    <label>Pot color:</label>
+    <input type="checkbox" id="potColorToggle">
+    <span id="potColorText">No</span>
+    <div class="color-options">
+      <input type="radio" name="potColor" value="Blue"> Blue
+      <input type="radio" name="potColor" value="Pink"> Pink
+      <input type="radio" name="potColor" value="Green"> Green
+      <input type="radio" name="potColor" value="Purple"> Purple
+    </div>
+
+    <label>Choose your plant:</label>
+    <select name="plant">
+      <option value="Aglaonema Silver Bay">Aglaonema Silver Bay</option>
+      <option value="Aloe Vera">Aloe Vera</option>
+      <option value="Boston Fern">Boston Fern</option>
+      <option value="Cactus">Cactus</option>
+      <option value="Monstera Deliciosa">Monstera Deliciosa</option>
+      <option value="Peace Lily">Peace Lily</option>
+      <option value="Sansevieria">Sansevieria</option>
+    </select>
+
+    <label>Choose your soil:</label>
+    <input type="radio" name="soil" value="Basic composted soil"> Basic composted soil
+    <input type="radio" name="soil" value="Premium fertilized soil"> Premium fertilized soil
+    <input type="radio" name="soil" value="Easy drainage soil"> Easy drainage soil
+
+    <label>Choose your extras:</label>
+    <input type="checkbox" name="extras[]" value="Moss pole"> Moss pole
+    <input type="checkbox" name="extras[]" value="Pebbles"> Pebbles
+    <input type="checkbox" name="extras[]" value="Smaller plants"> Smaller plants
+  </form>
+  <div class="right--block">
+    <div class="info-sheet--container"></div>
+  </div>
+  <script>
+    const potDecorationToggle = document.getElementById('potDecorationToggle');
+    const potDecorationText = document.getElementById('potDecorationText');
+
+    potDecorationToggle.addEventListener('change', () => {
+      if (potDecorationToggle.checked) {
+        potDecorationText.textContent = 'Yes';
+      } else {
+        potDecorationText.textContent = 'No';
+      }
+    });
+
+    const potColorToggle = document.getElementById('potColorToggle');
+    const potColorText = document.getElementById('potColorText');
+    const colorOptions = document.querySelector('.color-options');
+
+    potColorToggle.addEventListener('change', () => {
+      if (potColorToggle.checked) {
+        potColorText.textContent = 'Yes';
+        colorOptions.style.display = 'block';
+      } else {
+        potColorText.textContent = 'No';
+        colorOptions.style.display = 'none';
+      }
+    });
+  </script>
+  <script type="module" src="../src/customize.js"></script>
+</body>
+
+</html>

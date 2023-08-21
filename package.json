@@ -30,6 +30,6 @@
   },
   "dependencies": {
     "images": "^3.2.4",
-    "pots": "^3.2.4"
+    "pages": "^3.2.4"
   }
 }

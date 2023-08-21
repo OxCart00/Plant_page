@@ -1,6 +1,7 @@
 function sheetBuilder() {
   const plantInfo = JSON.parse(localStorage.getItem('plant-info'));
   const sheetContainer = document.querySelector('.info-sheet--container');
+  const rgtBlock = document.querySelector('.right--block');
   const detailsElement = document.createElement('div');
 
 
@@ -18,14 +19,14 @@ function sheetBuilder() {
   if (plantInfo.pot === 'simple-ceramic-too') {
     potImg.src = 'images/simple-ceramic-pot.png';
   } else if (plantInfo.pot === 'simple-decorated-ceramic-too') {
-    potImg.src = 'images/simple-decorated-ceramic-pot.png';
+    potImg.src = '../images/simple-decorated-ceramic-pot.png';
   } else if (plantInfo.pot === 'painted-decorated-ceramic-too') {
-    potImg.src = 'images/blue-painted-decorated-ceramic-pot.png';
+    potImg.src = '../images/blue-painted-decorated-ceramic-pot.png';
   } else {
     if (plantInfo.color) {
-    potImg.src = `images/${plantInfo.color}-${plantInfo.pot}.png`;
+    potImg.src = `../images/${plantInfo.color}-${plantInfo.pot}.png`;
     }else{
-    potImg.src = `images/${plantInfo.pot}.png`;
+    potImg.src = `../images/${plantInfo.pot}.png`;
     }
   }
   imageContainer.appendChild(potImg);
@@ -82,6 +83,16 @@ function sheetBuilder() {
 
   sheetContainer.appendChild(imageContainer);
   sheetContainer.appendChild(detailsElement);
+
+  const temp = document.getElementById('customize--button');
+
+  const customizeBtn = document.createElement('a');
+  customizeBtn.textContent = 'Customize!';
+  customizeBtn.id = 'customize--button';
+  customizeBtn.href = '../pages/customize.html';
+  if (!temp) {
+  rgtBlock.appendChild (customizeBtn);
+  }
 }
 
 export default sheetBuilder;
