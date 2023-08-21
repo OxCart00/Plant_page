@@ -29,6 +29,7 @@ function formObject() {
                 newPlant = new PlantRecomendation({ plant: 'peace-lily', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
               } else {
                 newPlant = new PlantRecomendation({ plant: 'peace-lily', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
+                newPlant.addColor('blue');
               }
             } else {
               if (selectedIds[4] === 'simple') {
@@ -37,6 +38,7 @@ function formObject() {
                 newPlant = new PlantRecomendation({ plant: 'sansevieria', soil: selectedIds[1], pot: `simple-decorated-${selectedIds[3]}` });
               } else {
                 newPlant = new PlantRecomendation({ plant: 'sansevieria', soil: selectedIds[1], pot: `painted-decorated-${selectedIds[3]}` });
+                newPlant.addColor('blue');
               }
             }
           } else {
@@ -47,6 +49,7 @@ function formObject() {
                 newPlant = new PlantRecomendation({ plant: 'fern', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
               } else {
                 newPlant = new PlantRecomendation({ plant: 'fern', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
+                newPlant.addColor('blue');
               }
             } else {
               if (selectedIds[4] === 'simple') {
@@ -55,6 +58,7 @@ function formObject() {
                 newPlant = new PlantRecomendation({ plant: 'fern', soil: selectedIds[1], pot: `simple-decorated-${selectedIds[3]}` });
               } else {
                 newPlant = new PlantRecomendation({ plant: 'fern', soil: selectedIds[1], pot: `painted-decorated-${selectedIds[3]}` });
+                newPlant.addColor('blue');
               }
             }
           }
@@ -68,6 +72,8 @@ function formObject() {
                 newPlant = new PlantRecomendation({ plant: 'peace-lily', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
               } else {
                 newPlant = new PlantRecomendation({ plant: 'peace-lily', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
+                newPlant.addColor('blue');
+
               }
             } else {
               if (selectedIds[4] === 'simple') {
@@ -76,6 +82,7 @@ function formObject() {
                 newPlant = new PlantRecomendation({ plant: 'aglaonema', soil: selectedIds[1], pot: `simple-decorated-${selectedIds[3]}` });
               } else {
                 newPlant = new PlantRecomendation({ plant: 'aglaonema', soil: selectedIds[1], pot: `painted-decorated-${selectedIds[3]}` });
+                newPlant.addColor('blue');
               }
             }
           } else {
@@ -86,6 +93,7 @@ function formObject() {
                 newPlant = new PlantRecomendation({ plant: 'peace-lily', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
               } else {
                 newPlant = new PlantRecomendation({ plant: 'peace-lily', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
+                newPlant.addColor('blue');
               }
             } else {
               if (selectedIds[4] === 'simple') {
@@ -94,6 +102,7 @@ function formObject() {
                 newPlant = new PlantRecomendation({ plant: 'monstera', soil: selectedIds[1], pot: `simple-decorated-${selectedIds[3]}` });
               } else {
                 newPlant = new PlantRecomendation({ plant: 'monstera', soil: selectedIds[1], pot: `painted-decorated-${selectedIds[3]}` });
+                newPlant.addColor('blue');
               }
             }
           }
@@ -107,6 +116,7 @@ function formObject() {
                 newPlant = new PlantRecomendation({ plant: 'aloe', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
               } else {
                 newPlant = new PlantRecomendation({ plant: 'aloe', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
+                newPlant.addColor('blue');
               }
             } else {
               if (selectedIds[4] === 'simple') {
@@ -115,6 +125,7 @@ function formObject() {
                 newPlant = new PlantRecomendation({ plant: 'aloe', soil: selectedIds[1], pot: `simple-decorated-${selectedIds[3]}` });
               } else {
                 newPlant = new PlantRecomendation({ plant: 'aloe', soil: selectedIds[1], pot: `painted-decorated-${selectedIds[3]}` });
+                newPlant.addColor('blue');
               }
             }
           } else {
@@ -125,6 +136,7 @@ function formObject() {
                 newPlant = new PlantRecomendation({ plant: 'cactus', soil: 'drainage', pot: 'simple-decorated-clay-pot' });
               } else {
                 newPlant = new PlantRecomendation({ plant: 'cactus', soil: 'drainage', pot: 'painted-decorated-clay-pot' });
+                newPlant.addColor('blue');
               }
             } else {
               if (selectedIds[4] === 'simple') {
@@ -133,6 +145,7 @@ function formObject() {
                 newPlant = new PlantRecomendation({ plant: 'cactus', soil: selectedIds[1], pot: `simple-decorated-${selectedIds[3]}` });
               } else {
                 newPlant = new PlantRecomendation({ plant: 'cactus', soil: selectedIds[1], pot: `painted-decorated-${selectedIds[3]}` });
+                newPlant.addColor('blue');
               }
             }
           }
@@ -149,9 +162,6 @@ function formObject() {
             newPlant.addGreenies();
           }
         }
-        // Aquí puedes realizar cualquier acción que desees con los IDs de los elementos seleccionados
-        console.log("Plant Recomendation:", newPlant);
-        console.log("IDs de elementos seleccionados:", selectedIds);
         localStorage.setItem("plant-info", JSON.stringify(newPlant));
         sheetBuilder();
       } 

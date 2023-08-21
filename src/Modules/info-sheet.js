@@ -1,6 +1,7 @@
 function sheetBuilder() {
   const plantInfo = JSON.parse(localStorage.getItem('plant-info'));
   const sheetContainer = document.querySelector('.info-sheet--container');
+  const detailsElement = document.createElement('div');
 
 
   sheetContainer.style.backgroundColor = '#7f03fc';
@@ -19,23 +20,11 @@ function sheetBuilder() {
   } else if (plantInfo.pot === 'simple-decorated-ceramic-too') {
     potImg.src = 'images/simple-decorated-ceramic-pot.png';
   } else if (plantInfo.pot === 'painted-decorated-ceramic-too') {
-    potImg.src = 'images/painted-decorated-ceramic-pot.png';
+    potImg.src = 'images/blue-painted-decorated-ceramic-pot.png';
   } else {
-    potImg.src = `images/${plantInfo.pot}.png`;
+    potImg.src = `images/${plantInfo.color}-${plantInfo.pot}.png`;
   }
   imageContainer.appendChild(potImg);
-
-  const soilImg = document.createElement('img');
-  soilImg.src = `images/soil-${plantInfo.soil}.png`;
-  imageContainer.appendChild(soilImg);
-
-  const plantImg = document.createElement('img');
-  plantImg.src = `images/plant-${plantInfo.plant}.png`;
-  imageContainer.appendChild(plantImg);
-
-  sheetContainer.appendChild(imageContainer);
-
-  const detailsElement = document.createElement('div');
 
   const nameElement = document.createElement('p');
   nameElement.textContent = `Name: ${plantInfo.plant}`;
@@ -49,6 +38,42 @@ function sheetBuilder() {
   potElement.textContent = `Pot: ${plantInfo.pot}`;
   detailsElement.appendChild(potElement);
 
+  const colorElement = document.createElement('p');
+  colorElement.textContent = `Color: ${plantInfo.color}`;
+  detailsElement.appendChild(colorElement);
+
+
+  if (plantInfo.greenies || plantInfo.moss || plantInfo.pebbles) {
+    const extraElement = document.createElement('p');
+    extraElement.textContent = `Extras: `;
+    if (plantInfo.greenies) {
+      extraElement.textContent += `${plantInfo.greenies} `;
+      const greeniesImg = document.createElement('img');
+      greeniesImg.src = `images/${plantInfo.greenies}.png`;
+      imageContainer.appendChild(greeniesImg);
+    } if (plantInfo.pebbles) {
+      extraElement.textContent += `${plantInfo.pebbles} `;
+      const pebblesImg = document.createElement('img');
+      pebblesImg.src = `images/${plantInfo.pebbles}.png`;
+      imageContainer.appendChild(pebblesImg);
+    } if (plantInfo.moss) {
+      extraElement.textContent += `${plantInfo.moss} `;
+      const mossImg = document.createElement('img');
+      mossImg.src = `images/${plantInfo.moss}.png`;
+      imageContainer.appendChild(mossImg);
+    }
+    detailsElement.appendChild(extraElement);
+  }
+
+  const soilImg = document.createElement('img');
+  soilImg.src = `images/soil-${plantInfo.soil}.png`;
+  imageContainer.appendChild(soilImg);
+
+  const plantImg = document.createElement('img');
+  plantImg.src = `images/plant-${plantInfo.plant}.png`;
+  imageContainer.appendChild(plantImg);
+
+  sheetContainer.appendChild(imageContainer);
   sheetContainer.appendChild(detailsElement);
 }
 

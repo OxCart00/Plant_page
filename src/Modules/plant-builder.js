@@ -4,6 +4,9 @@ class PlantRecomendation{
     this.soil = soil;
     this.pot = pot;
   }
+  addColor(color){
+    this.color = color;
+  }
   addMoss(){
     this.moss = 'moss-pole';
   }
