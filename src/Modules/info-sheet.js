@@ -22,7 +22,11 @@ function sheetBuilder() {
   } else if (plantInfo.pot === 'painted-decorated-ceramic-too') {
     potImg.src = 'images/blue-painted-decorated-ceramic-pot.png';
   } else {
+    if (plantInfo.color) {
     potImg.src = `images/${plantInfo.color}-${plantInfo.pot}.png`;
+    }else{
+    potImg.src = `images/${plantInfo.pot}.png`;
+    }
   }
   imageContainer.appendChild(potImg);
 
@@ -38,9 +42,12 @@ function sheetBuilder() {
   potElement.textContent = `Pot: ${plantInfo.pot}`;
   detailsElement.appendChild(potElement);
 
-  const colorElement = document.createElement('p');
-  colorElement.textContent = `Color: ${plantInfo.color}`;
-  detailsElement.appendChild(colorElement);
+  if (plantInfo.color) {
+    const colorElement = document.createElement('p');
+    colorElement.textContent = `Color: ${plantInfo.color}`;
+    detailsElement.appendChild(colorElement);
+  }
+
 
 
   if (plantInfo.greenies || plantInfo.moss || plantInfo.pebbles) {
