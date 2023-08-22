@@ -81,8 +81,20 @@ function sheetBuilder() {
   plantImg.src = `images/plant-${plantInfo.plant}.png`;
   imageContainer.appendChild(plantImg);
 
+
   sheetContainer.appendChild(imageContainer);
   sheetContainer.appendChild(detailsElement);
+  const temp = document.getElementById('customize--button');
+
+  const customizeBtn = document.createElement('a');
+  customizeBtn.textContent = 'Check store availability!';
+  customizeBtn.id = 'customize--button';
+  customizeBtn.href = '../pages/stock.html';
+  if (!temp) {
+  rgtBlock.appendChild (customizeBtn);
+  }
 }
+
+
 
 export default sheetBuilder;
