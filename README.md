@@ -1,10 +1,18 @@
 # Plant_page
+*Corella Camacho Oscar*
+*Sacasa Castilo Juan*
 
 INIT Page
 
 ESLint Init: npm run lint
 
-Parcel Init: npm start
+Correr los siguientes comandos en la terminal
+
+1 Install: npm install
+      
+2 Build: npm run build 
+
+3 Parcel Init: npm start
 
 FORMAT
 
