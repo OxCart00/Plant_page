@@ -190,5 +190,3 @@ export function stockBuilder() {
     rgtBlock.appendChild(customizeBtn);
   }
 }
-
-

@@ -1,5 +1,5 @@
 import PlantRecomendation from "./plant-builder.js";
-import { sheetBuilder}  from "./info-sheet.js";
+import { sheetBuilder } from "./info-sheet.js";
 
 const formElements = document.getElementsByClassName("plants--form__answere");
 // Obtener el formulario y los campos requeridos

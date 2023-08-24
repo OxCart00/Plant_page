@@ -1,1 +1,389 @@
-{"dependencies":[{"name":"C:\\Users\\Oscar\\Documents\\GitHub\\Plant_page\\package.json","includedInParent":true,"mtime":1692894944028}],"generated":{"js":"var e=function(){function e(e,n){for(var t=0;t<n.length;t++){var o=n[t];o.enumerable=o.enumerable||!1,o.configurable=!0,\"value\"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(n,t,o){return t&&e(n.prototype,t),o&&e(n,o),n}}();function n(e,n){if(!(e instanceof n))throw new TypeError(\"Cannot call a class as a function\")}var t=function(){function t(e){var o=e.plant,i=e.soil,a=e.pot;n(this,t),this.plant=o,this.soil=i,this.pot=a}return e(t,[{key:\"addColor\",value:function(e){this.color=e}},{key:\"addMoss\",value:function(){this.moss=\"moss-pole\"}},{key:\"addPebbles\",value:function(){this.pebbles=\"pebbles\"}},{key:\"addGreenies\",value:function(){this.greenies=\"mini-plants\"}}]),t}();module.exports=t;","map":{"mappings":[{"name":"PlantRecomendation","generated":{"line":5,"column":4},"source":"..\\src\\modules\\plant-builder.js","original":{"line":1,"column":6}},{"generated":{"line":6,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":2}},{"generated":{"line":6,"column":36},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":36}},{"generated":{"line":7,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":36}},{"name":"plant","generated":{"line":7,"column":8},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":16}},{"generated":{"line":7,"column":13},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":36}},{"name":"plant","generated":{"line":7,"column":21},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":16}},{"generated":{"line":7,"column":26},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":36}},{"generated":{"line":8,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":36}},{"name":"soil","generated":{"line":8,"column":8},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":23}},{"generated":{"line":8,"column":12},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":36}},{"name":"soil","generated":{"line":8,"column":20},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":23}},{"generated":{"line":8,"column":24},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":36}},{"generated":{"line":9,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":36}},{"name":"pot","generated":{"line":9,"column":8},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":29}},{"generated":{"line":9,"column":11},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":36}},{"name":"pot","generated":{"line":9,"column":19},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":29}},{"generated":{"line":9,"column":22},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":36}},{"generated":{"line":11,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":2,"column":36}},{"generated":{"line":13,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":3,"column":4}},{"name":"plant","generated":{"line":13,"column":9},"source":"..\\src\\modules\\plant-builder.js","original":{"line":3,"column":9}},{"generated":{"line":13,"column":14},"source":"..\\src\\modules\\plant-builder.js","original":{"line":3,"column":4}},{"name":"plant","generated":{"line":13,"column":17},"source":"..\\src\\modules\\plant-builder.js","original":{"line":3,"column":17}},{"generated":{"line":13,"column":22},"source":"..\\src\\modules\\plant-builder.js","original":{"line":3,"column":4}},{"generated":{"line":14,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":4,"column":4}},{"name":"soil","generated":{"line":14,"column":9},"source":"..\\src\\modules\\plant-builder.js","original":{"line":4,"column":9}},{"generated":{"line":14,"column":13},"source":"..\\src\\modules\\plant-builder.js","original":{"line":4,"column":4}},{"name":"soil","generated":{"line":14,"column":16},"source":"..\\src\\modules\\plant-builder.js","original":{"line":4,"column":16}},{"generated":{"line":14,"column":20},"source":"..\\src\\modules\\plant-builder.js","original":{"line":4,"column":4}},{"generated":{"line":15,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":5,"column":4}},{"name":"pot","generated":{"line":15,"column":9},"source":"..\\src\\modules\\plant-builder.js","original":{"line":5,"column":9}},{"generated":{"line":15,"column":12},"source":"..\\src\\modules\\plant-builder.js","original":{"line":5,"column":4}},{"name":"pot","generated":{"line":15,"column":15},"source":"..\\src\\modules\\plant-builder.js","original":{"line":5,"column":15}},{"generated":{"line":15,"column":18},"source":"..\\src\\modules\\plant-builder.js","original":{"line":5,"column":4}},{"generated":{"line":16,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":6,"column":3}},{"name":"color","generated":{"line":20,"column":29},"source":"..\\src\\modules\\plant-builder.js","original":{"line":7,"column":11}},{"generated":{"line":20,"column":36},"source":"..\\src\\modules\\plant-builder.js","original":{"line":7,"column":18}},{"generated":{"line":21,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":8,"column":4}},{"name":"color","generated":{"line":21,"column":11},"source":"..\\src\\modules\\plant-builder.js","original":{"line":8,"column":9}},{"generated":{"line":21,"column":16},"source":"..\\src\\modules\\plant-builder.js","original":{"line":8,"column":4}},{"name":"color","generated":{"line":21,"column":19},"source":"..\\src\\modules\\plant-builder.js","original":{"line":8,"column":17}},{"generated":{"line":21,"column":24},"source":"..\\src\\modules\\plant-builder.js","original":{"line":8,"column":4}},{"generated":{"line":22,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":9,"column":3}},{"generated":{"line":25,"column":30},"source":"..\\src\\modules\\plant-builder.js","original":{"line":10,"column":12}},{"generated":{"line":26,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":11,"column":4}},{"name":"moss","generated":{"line":26,"column":11},"source":"..\\src\\modules\\plant-builder.js","original":{"line":11,"column":9}},{"generated":{"line":26,"column":15},"source":"..\\src\\modules\\plant-builder.js","original":{"line":11,"column":4}},{"generated":{"line":26,"column":18},"source":"..\\src\\modules\\plant-builder.js","original":{"line":11,"column":16}},{"generated":{"line":26,"column":29},"source":"..\\src\\modules\\plant-builder.js","original":{"line":11,"column":4}},{"generated":{"line":27,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":12,"column":3}},{"generated":{"line":30,"column":33},"source":"..\\src\\modules\\plant-builder.js","original":{"line":13,"column":15}},{"generated":{"line":31,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":14,"column":4}},{"name":"pebbles","generated":{"line":31,"column":11},"source":"..\\src\\modules\\plant-builder.js","original":{"line":14,"column":9}},{"generated":{"line":31,"column":18},"source":"..\\src\\modules\\plant-builder.js","original":{"line":14,"column":4}},{"generated":{"line":31,"column":21},"source":"..\\src\\modules\\plant-builder.js","original":{"line":14,"column":19}},{"generated":{"line":31,"column":30},"source":"..\\src\\modules\\plant-builder.js","original":{"line":14,"column":4}},{"generated":{"line":32,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":15,"column":3}},{"generated":{"line":35,"column":34},"source":"..\\src\\modules\\plant-builder.js","original":{"line":16,"column":16}},{"generated":{"line":36,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":17,"column":4}},{"name":"greenies","generated":{"line":36,"column":11},"source":"..\\src\\modules\\plant-builder.js","original":{"line":17,"column":9}},{"generated":{"line":36,"column":19},"source":"..\\src\\modules\\plant-builder.js","original":{"line":17,"column":4}},{"generated":{"line":36,"column":22},"source":"..\\src\\modules\\plant-builder.js","original":{"line":17,"column":20}},{"generated":{"line":36,"column":35},"source":"..\\src\\modules\\plant-builder.js","original":{"line":17,"column":4}},{"generated":{"line":37,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":18,"column":3}},{"name":"module","generated":{"line":43,"column":0},"source":"..\\src\\modules\\plant-builder.js","original":{"line":20,"column":0}},{"name":"exports","generated":{"line":43,"column":7},"source":"..\\src\\modules\\plant-builder.js","original":{"line":20,"column":7}},{"generated":{"line":43,"column":14},"source":"..\\src\\modules\\plant-builder.js","original":{"line":20,"column":0}},{"name":"PlantRecomendation","generated":{"line":43,"column":17},"source":"..\\src\\modules\\plant-builder.js","original":{"line":20,"column":17}},{"generated":{"line":43,"column":35},"source":"..\\src\\modules\\plant-builder.js","original":{"line":20,"column":0}}],"sources":{"..\\src\\modules\\plant-builder.js":"class PlantRecomendation {\n  constructor({ plant, soil, pot }) {\n    this.plant = plant;\n    this.soil = soil;\n    this.pot = pot;\n  }\n  addColor(color) {\n    this.color = color;\n  }\n  addMoss() {\n    this.moss = \"moss-pole\";\n  }\n  addPebbles() {\n    this.pebbles = \"pebbles\";\n  }\n  addGreenies() {\n    this.greenies = \"mini-plants\";\n  }\n}\nmodule.exports = PlantRecomendation;\n"},"lineCount":null}},"hash":"c1d255ddbed1299a4f54a41c735495bf","cacheData":{"env":{}}}
+{
+  "dependencies": [
+    {
+      "name": "C:\\Users\\Oscar\\Documents\\GitHub\\Plant_page\\package.json",
+      "includedInParent": true,
+      "mtime": 1692894944028
+    }
+  ],
+  "generated": {
+    "js": "var e=function(){function e(e,n){for(var t=0;t<n.length;t++){var o=n[t];o.enumerable=o.enumerable||!1,o.configurable=!0,\"value\"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(n,t,o){return t&&e(n.prototype,t),o&&e(n,o),n}}();function n(e,n){if(!(e instanceof n))throw new TypeError(\"Cannot call a class as a function\")}var t=function(){function t(e){var o=e.plant,i=e.soil,a=e.pot;n(this,t),this.plant=o,this.soil=i,this.pot=a}return e(t,[{key:\"addColor\",value:function(e){this.color=e}},{key:\"addMoss\",value:function(){this.moss=\"moss-pole\"}},{key:\"addPebbles\",value:function(){this.pebbles=\"pebbles\"}},{key:\"addGreenies\",value:function(){this.greenies=\"mini-plants\"}}]),t}();module.exports=t;",
+    "map": {
+      "mappings": [
+        {
+          "name": "PlantRecomendation",
+          "generated": { "line": 5, "column": 4 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 1, "column": 6 }
+        },
+        {
+          "generated": { "line": 6, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 2 }
+        },
+        {
+          "generated": { "line": 6, "column": 36 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 36 }
+        },
+        {
+          "generated": { "line": 7, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 36 }
+        },
+        {
+          "name": "plant",
+          "generated": { "line": 7, "column": 8 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 16 }
+        },
+        {
+          "generated": { "line": 7, "column": 13 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 36 }
+        },
+        {
+          "name": "plant",
+          "generated": { "line": 7, "column": 21 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 16 }
+        },
+        {
+          "generated": { "line": 7, "column": 26 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 36 }
+        },
+        {
+          "generated": { "line": 8, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 36 }
+        },
+        {
+          "name": "soil",
+          "generated": { "line": 8, "column": 8 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 23 }
+        },
+        {
+          "generated": { "line": 8, "column": 12 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 36 }
+        },
+        {
+          "name": "soil",
+          "generated": { "line": 8, "column": 20 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 23 }
+        },
+        {
+          "generated": { "line": 8, "column": 24 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 36 }
+        },
+        {
+          "generated": { "line": 9, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 36 }
+        },
+        {
+          "name": "pot",
+          "generated": { "line": 9, "column": 8 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 29 }
+        },
+        {
+          "generated": { "line": 9, "column": 11 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 36 }
+        },
+        {
+          "name": "pot",
+          "generated": { "line": 9, "column": 19 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 29 }
+        },
+        {
+          "generated": { "line": 9, "column": 22 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 36 }
+        },
+        {
+          "generated": { "line": 11, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 2, "column": 36 }
+        },
+        {
+          "generated": { "line": 13, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 3, "column": 4 }
+        },
+        {
+          "name": "plant",
+          "generated": { "line": 13, "column": 9 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 3, "column": 9 }
+        },
+        {
+          "generated": { "line": 13, "column": 14 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 3, "column": 4 }
+        },
+        {
+          "name": "plant",
+          "generated": { "line": 13, "column": 17 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 3, "column": 17 }
+        },
+        {
+          "generated": { "line": 13, "column": 22 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 3, "column": 4 }
+        },
+        {
+          "generated": { "line": 14, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 4, "column": 4 }
+        },
+        {
+          "name": "soil",
+          "generated": { "line": 14, "column": 9 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 4, "column": 9 }
+        },
+        {
+          "generated": { "line": 14, "column": 13 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 4, "column": 4 }
+        },
+        {
+          "name": "soil",
+          "generated": { "line": 14, "column": 16 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 4, "column": 16 }
+        },
+        {
+          "generated": { "line": 14, "column": 20 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 4, "column": 4 }
+        },
+        {
+          "generated": { "line": 15, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 5, "column": 4 }
+        },
+        {
+          "name": "pot",
+          "generated": { "line": 15, "column": 9 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 5, "column": 9 }
+        },
+        {
+          "generated": { "line": 15, "column": 12 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 5, "column": 4 }
+        },
+        {
+          "name": "pot",
+          "generated": { "line": 15, "column": 15 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 5, "column": 15 }
+        },
+        {
+          "generated": { "line": 15, "column": 18 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 5, "column": 4 }
+        },
+        {
+          "generated": { "line": 16, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 6, "column": 3 }
+        },
+        {
+          "name": "color",
+          "generated": { "line": 20, "column": 29 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 7, "column": 11 }
+        },
+        {
+          "generated": { "line": 20, "column": 36 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 7, "column": 18 }
+        },
+        {
+          "generated": { "line": 21, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 8, "column": 4 }
+        },
+        {
+          "name": "color",
+          "generated": { "line": 21, "column": 11 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 8, "column": 9 }
+        },
+        {
+          "generated": { "line": 21, "column": 16 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 8, "column": 4 }
+        },
+        {
+          "name": "color",
+          "generated": { "line": 21, "column": 19 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 8, "column": 17 }
+        },
+        {
+          "generated": { "line": 21, "column": 24 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 8, "column": 4 }
+        },
+        {
+          "generated": { "line": 22, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 9, "column": 3 }
+        },
+        {
+          "generated": { "line": 25, "column": 30 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 10, "column": 12 }
+        },
+        {
+          "generated": { "line": 26, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 11, "column": 4 }
+        },
+        {
+          "name": "moss",
+          "generated": { "line": 26, "column": 11 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 11, "column": 9 }
+        },
+        {
+          "generated": { "line": 26, "column": 15 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 11, "column": 4 }
+        },
+        {
+          "generated": { "line": 26, "column": 18 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 11, "column": 16 }
+        },
+        {
+          "generated": { "line": 26, "column": 29 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 11, "column": 4 }
+        },
+        {
+          "generated": { "line": 27, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 12, "column": 3 }
+        },
+        {
+          "generated": { "line": 30, "column": 33 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 13, "column": 15 }
+        },
+        {
+          "generated": { "line": 31, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 14, "column": 4 }
+        },
+        {
+          "name": "pebbles",
+          "generated": { "line": 31, "column": 11 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 14, "column": 9 }
+        },
+        {
+          "generated": { "line": 31, "column": 18 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 14, "column": 4 }
+        },
+        {
+          "generated": { "line": 31, "column": 21 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 14, "column": 19 }
+        },
+        {
+          "generated": { "line": 31, "column": 30 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 14, "column": 4 }
+        },
+        {
+          "generated": { "line": 32, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 15, "column": 3 }
+        },
+        {
+          "generated": { "line": 35, "column": 34 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 16, "column": 16 }
+        },
+        {
+          "generated": { "line": 36, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 17, "column": 4 }
+        },
+        {
+          "name": "greenies",
+          "generated": { "line": 36, "column": 11 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 17, "column": 9 }
+        },
+        {
+          "generated": { "line": 36, "column": 19 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 17, "column": 4 }
+        },
+        {
+          "generated": { "line": 36, "column": 22 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 17, "column": 20 }
+        },
+        {
+          "generated": { "line": 36, "column": 35 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 17, "column": 4 }
+        },
+        {
+          "generated": { "line": 37, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 18, "column": 3 }
+        },
+        {
+          "name": "module",
+          "generated": { "line": 43, "column": 0 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 20, "column": 0 }
+        },
+        {
+          "name": "exports",
+          "generated": { "line": 43, "column": 7 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 20, "column": 7 }
+        },
+        {
+          "generated": { "line": 43, "column": 14 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 20, "column": 0 }
+        },
+        {
+          "name": "PlantRecomendation",
+          "generated": { "line": 43, "column": 17 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 20, "column": 17 }
+        },
+        {
+          "generated": { "line": 43, "column": 35 },
+          "source": "..\\src\\modules\\plant-builder.js",
+          "original": { "line": 20, "column": 0 }
+        }
+      ],
+      "sources": {
+        "..\\src\\modules\\plant-builder.js": "class PlantRecomendation {\n  constructor({ plant, soil, pot }) {\n    this.plant = plant;\n    this.soil = soil;\n    this.pot = pot;\n  }\n  addColor(color) {\n    this.color = color;\n  }\n  addMoss() {\n    this.moss = \"moss-pole\";\n  }\n  addPebbles() {\n    this.pebbles = \"pebbles\";\n  }\n  addGreenies() {\n    this.greenies = \"mini-plants\";\n  }\n}\nmodule.exports = PlantRecomendation;\n"
+      },
+      "lineCount": null
+    }
+  },
+  "hash": "c1d255ddbed1299a4f54a41c735495bf",
+  "cacheData": { "env": {} }
+}
