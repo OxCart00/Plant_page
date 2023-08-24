@@ -66,11 +66,11 @@ export async function getObjectInformation() {
   const potType = clayPot ? "clay" : "ceramic";
   const isDecorated = plantInfo.pot.split("-").includes("decorated");
   const isPainted = plantInfo.pot.split("-").includes("painted");
-  
+  const plantName = plantInfo.plant === "peace-lily" ? "peaceLily" : plantInfo.plant;  
   const potId = stockConfig.potOptions[potType][isDecorated ? "decorated" : "simple"][isPainted ? "painted" : "unpainted"];
   
   const objectPromises = [
-    fetchPlantInfo("plant", plantInfo.plant),
+    fetchPlantInfo("plant", plantName),
     fetchPlantInfo("pot", potId),
     fetchPlantInfo("soil", plantInfo.soil),
   ];
