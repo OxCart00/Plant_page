@@ -1,4 +1,8 @@
 import { fetchPlantInfo } from "./API.js";
+import { stockConfig } from "../config.js";
+
+const infoAccordion = document.querySelector(".description .accordion-content");
+const tipsAccordion = document.querySelector(".tips .accordion-content");
 
 export function buildAccordion() {
   const accordionItems = document.querySelectorAll(".accordion-item");
@@ -35,38 +39,36 @@ function checkStockMiddleware(objectInfos) {
     throw new Error("Stock igual a 0 encontrado");
   }
 }
+function createAlert(message, backgroundColor) {
+  const alert = document.createElement("div");
+  alert.textContent = message;
+  alert.style.backgroundColor = backgroundColor;
+  return alert;
+}
+function createAndAppendElement(tag, text, container) {
+  const element = document.createElement(tag);
+  element.textContent = text;
+  container.appendChild(element);
+}
+
+function handleInfo(data) {
+  console.log("Datos de la respuesta:", data);
+  createAndAppendElement("p", data.description, infoAccordion);
+  createAndAppendElement("p", `HUMIDITY: ${data.care.humidity}`, tipsAccordion);
+  createAndAppendElement("p", `LIGHT: ${data.care.light}`, tipsAccordion);
+  createAndAppendElement("p", `TEMPERATURE: ${data.care.temperature}`, tipsAccordion);
+  createAndAppendElement("p", `WATER: ${data.care.water}`, tipsAccordion);
+}
 export async function getObjectInformation() {
   const plantInfo = JSON.parse(localStorage.getItem("plant-info"));
-  let potId = "";
-  if (plantInfo.pot.split("-").includes("ceramic")) {
-    if (plantInfo.pot.split("-").includes("decorated")) {
-      if (plantInfo.pot.split("-").includes("painted")) {
-        potId = `ceramic-decorated-${plantInfo.color}`;
-      } else {
-        potId = "ceramic-decorated-unpainted";
-      }
-    } else {
-      if (plantInfo.pot.split("-").includes("painted")) {
-        potId = `ceramic-simple-${plantInfo.color}`;
-      } else {
-        potId = "ceramic-simple-unpainted";
-      }
-    }
-  } else {
-    if (plantInfo.pot.split("-").includes("decorated")) {
-      if (plantInfo.pot.split("-").includes("painted")) {
-        potId = `clay-decorated-${plantInfo.color}`;
-      } else {
-        potId = "clay-decorated-unpainted";
-      }
-    } else {
-      if (plantInfo.pot.split("-").includes("painted")) {
-        potId = `clay-simple-${plantInfo.color}`;
-      } else {
-        potId = "clay-simple-unpainted";
-      }
-    }
-  }
+
+  const clayPot = plantInfo.pot.split("-").includes("clay");
+  const potType = clayPot ? "clay" : "ceramic";
+  const isDecorated = plantInfo.pot.split("-").includes("decorated");
+  const isPainted = plantInfo.pot.split("-").includes("painted");
+  
+  const potId = stockConfig.potOptions[potType][isDecorated ? "decorated" : "simple"][isPainted ? "painted" : "unpainted"];
+  
   const objectPromises = [
     fetchPlantInfo("plant", plantInfo.plant),
     fetchPlantInfo("pot", potId),
@@ -79,87 +81,39 @@ export async function getObjectInformation() {
       ".inventory .accordion-content",
     );
     for (let i = 0; i < objectsInfo.length; i++) {
-      if (objectsInfo[i].stock <= 10 && objectsInfo[i].stock != 0) {
-        if (i === 0) {
-          const alert = document.createElement("div");
-          alert.textContent = `${plantInfo.plant} plant: Only ${objectsInfo[i].stock} items left on stock`;
-          alert.style.backgroundColor = "yellow";
-          inventAccordion.appendChild(alert);
-        }
-        if (i === 1) {
-          const alert = document.createElement("div");
-          alert.textContent = `${potId} pot: Only ${objectsInfo[i].stock} items left on stock`;
-          alert.style.backgroundColor = "yellow";
-          inventAccordion.appendChild(alert);
-        }
-        if (i === 2) {
-          const alert = document.createElement("div");
-          alert.textContent = `${plantInfo.soil} soil: Only ${objectsInfo[i].stock} items left on stock`;
-          alert.style.backgroundColor = "yellow";
-          inventAccordion.appendChild(alert);
-        }
+      const objectType = i === 0 ? "plant" : i === 1 ? "pot" : "soil";
+      const objectName = i === 0 ? plantInfo.plant : i === 1 ? potId : plantInfo.soil;
+      
+      if (objectsInfo[i].stock <= 10 && objectsInfo[i].stock !== 0) {
+        const alertMessage = `${objectName} ${objectType}: Only ${objectsInfo[i].stock} items left on stock`;
+        const alert = createAlert(alertMessage, "yellow");
+        inventAccordion.appendChild(alert);
       }
+      
       if (objectsInfo[i].stock === 0) {
-        if (i === 0) {
-          const alert = document.createElement("div");
-          alert.textContent = `${plantInfo.plant} plant is out of stock, please select a different Plant`;
-          alert.style.backgroundColor = "red";
-          inventAccordion.appendChild(alert);
-        }
-        if (i === 1) {
-          const alert = document.createElement("div");
-          alert.textContent = `${potId} pot is out of stock, please select a different Pot`;
-          alert.style.backgroundColor = "red";
-          inventAccordion.appendChild(alert);
-        }
-        if (i === 2) {
-          const alert = document.createElement("div");
-          alert.textContent = `${plantInfo.soil} soil is out of stock, please select a different Soil`;
-          alert.style.backgroundColor = "red";
-          inventAccordion.appendChild(alert);
-        }
+        const alertMessage = `${objectName} ${objectType} is out of stock, please select a different ${objectType}`;
+        const alert = createAlert(alertMessage, "red");
+        inventAccordion.appendChild(alert);
       }
     }
     checkStockMiddleware(objectsInfo);
-    const infoAccordion = document.querySelector(
-      ".description .accordion-content",
-    );
-    const tipsAccordion = document.querySelector(".tips .accordion-content");
-    let descriptionUrl = "";
-    if (plantInfo.plant == "peace-lily") {
-      descriptionUrl = `https://qfble0gquj.execute-api.us-east-2.amazonaws.com/plant-store/info/peaceLily`;
-    } else {
-      descriptionUrl = `https://qfble0gquj.execute-api.us-east-2.amazonaws.com/plant-store/info/${plantInfo.plant}`;
-    }
 
-    fetch(descriptionUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Datos de la respuesta:", data);
-        const description = document.createElement("p");
-        description.textContent = data.description;
-        infoAccordion.appendChild(description);
-        const humi = document.createElement("p");
-        humi.textContent = `HUMIDITY: ${data.care.humidity}`;
-        tipsAccordion.appendChild(humi);
-        const lig = document.createElement("p");
-        lig.textContent = `LIGHT: ${data.care.light}`;
-        tipsAccordion.appendChild(lig);
-        const tempt = document.createElement("p");
-        tempt.textContent = `TEMPERATURE: ${data.care.temperature}`;
-        tipsAccordion.appendChild(tempt);
-        const wata = document.createElement("p");
-        wata.textContent = `WATER: ${data.care.water}`;
-        tipsAccordion.appendChild(wata);
-      })
-      .catch((error) => {
-        console.error("Error al obtener los datos:", error);
-      });
+    const descriptionUrl =
+      plantInfo.plant === "peace-lily"
+        ? "https://qfble0gquj.execute-api.us-east-2.amazonaws.com/plant-store/info/peaceLily"
+        : `https://qfble0gquj.execute-api.us-east-2.amazonaws.com/plant-store/info/${plantInfo.plant}`;
+
+        fetch(descriptionUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(handleInfo)
+        .catch((error) => {
+          console.error("Error al obtener los datos:", error);
+        });
   } catch (error) {
     console.error("Error al obtener información de objetos:", error);
   }
