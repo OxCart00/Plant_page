@@ -1,86 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <title>Customize your plant</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../styles/styles.css" />
-  <title>Customize your plant</title>
-</head>
+  <body>
+    <form class="plants--form">
+      <h1>Customize your plant!</h1>
 
-<body>
-  <form class="plants--form">
-  <h1>Customize your plant!</h1>
+      <label>Choose your pot:</label>
+      <input type="radio" name="pot" value="clay" /> Clay
+      <input type="radio" name="pot" value="ceramic" /> Ceramic
 
-    <label>Choose your pot:</label>
-    <input type="radio" name="pot" value="clay"> Clay
-    <input type="radio" name="pot" value="ceramic"> Ceramic
+      <label>Pot decorations:</label>
+      <input type="checkbox" name="decoration" id="potDecorationToggle" />
+      <span id="potDecorationText">No</span>
 
-    <label>Pot decorations:</label>
-    <input type="checkbox" name = "decoration" id="potDecorationToggle">
-    <span id="potDecorationText">No</span>
+      <label>Pot color:</label>
+      <input type="checkbox" id="potColorToggle" name="color" />
+      <span id="potColorText">No</span>
+      <div class="color-options">
+        <input type="radio" name="potColor" value="blue" /> Blue
+        <input type="radio" name="potColor" value="pink" /> Pink
+        <input type="radio" name="potColor" value="green" /> Green
+        <input type="radio" name="potColor" value="purple" /> Purple
+      </div>
 
-    <label>Pot color:</label>
-    <input type="checkbox" id="potColorToggle" name="color">
-    <span id="potColorText">No</span>
-    <div class="color-options">
-      <input type="radio" name="potColor" value="blue"> Blue
-      <input type="radio" name="potColor" value="pink"> Pink
-      <input type="radio" name="potColor" value="green"> Green
-      <input type="radio" name="potColor" value="purple"> Purple
+      <label>Choose your plant:</label>
+      <select name="plant">
+        <option value="aglaonema">Aglaonema Silver Bay</option>
+        <option value="aloe">Aloe Vera</option>
+        <option value="fern">Boston Fern</option>
+        <option value="cactus">Cactus</option>
+        <option value="monstera">Monstera Deliciosa</option>
+        <option value="peace-lily">Peace Lily</option>
+        <option value="sansevieria">Sansevieria</option>
+      </select>
+
+      <label>Choose your soil:</label>
+      <input type="radio" name="soil" value="composted" /> Basic composted soil
+      <input type="radio" name="soil" value="fertilized" /> Premium fertilized
+      soil <input type="radio" name="soil" value="drainage" /> Easy drainage
+      soil
+
+      <label>Choose your extras:</label>
+      <input type="checkbox" name="extras" value="moss-pole" /> Moss pole
+      <input type="checkbox" name="extras" value="pebbles" /> Pebbles
+      <input type="checkbox" name="extras" value="mini-plants" /> Smaller plants
+    </form>
+    <div class="right--block">
+      <div class="info-sheet--container"></div>
     </div>
+    <script>
+      const potDecorationToggle = document.getElementById(
+        "potDecorationToggle",
+      );
+      const potDecorationText = document.getElementById("potDecorationText");
 
-    <label>Choose your plant:</label>
-    <select name="plant">
-      <option value="aglaonema">Aglaonema Silver Bay</option>
-      <option value="aloe">Aloe Vera</option>
-      <option value="fern">Boston Fern</option>
-      <option value="cactus">Cactus</option>
-      <option value="monstera">Monstera Deliciosa</option>
-      <option value="peace-lily">Peace Lily</option>
-      <option value="sansevieria">Sansevieria</option>
-    </select>
+      potDecorationToggle.addEventListener("change", () => {
+        if (potDecorationToggle.checked) {
+          potDecorationText.textContent = "Yes";
+        } else {
+          potDecorationText.textContent = "No";
+        }
+      });
 
-    <label>Choose your soil:</label>
-    <input type="radio" name="soil" value="composted"> Basic composted soil
-    <input type="radio" name="soil" value="fertilized"> Premium fertilized soil
-    <input type="radio" name="soil" value="drainage"> Easy drainage soil
+      const potColorToggle = document.getElementById("potColorToggle");
+      const potColorText = document.getElementById("potColorText");
+      const colorOptions = document.querySelector(".color-options");
 
-    <label>Choose your extras:</label>
-    <input type="checkbox" name="extras" value="moss-pole"> Moss pole
-    <input type="checkbox" name="extras" value="pebbles"> Pebbles
-    <input type="checkbox" name="extras" value="mini-plants"> Smaller plants
-  </form>
-  <div class="right--block">
-    <div class="info-sheet--container"></div>
-  </div>
-  <script>
-    const potDecorationToggle = document.getElementById('potDecorationToggle');
-    const potDecorationText = document.getElementById('potDecorationText');
-
-    potDecorationToggle.addEventListener('change', () => {
-      if (potDecorationToggle.checked) {
-        potDecorationText.textContent = 'Yes';
-      } else {
-        potDecorationText.textContent = 'No';
-      }
-    });
-
-    const potColorToggle = document.getElementById('potColorToggle');
-    const potColorText = document.getElementById('potColorText');
-    const colorOptions = document.querySelector('.color-options');
-
-    potColorToggle.addEventListener('change', () => {
-      if (potColorToggle.checked) {
-        potColorText.textContent = 'Yes';
-        colorOptions.style.display = 'block';
-      } else {
-        potColorText.textContent = 'No';
-        colorOptions.style.display = 'none';
-      }
-    });
-  </script>
-  <script type="module" src="../src/customize.js"></script>
-</body>
-
+      potColorToggle.addEventListener("change", () => {
+        if (potColorToggle.checked) {
+          potColorText.textContent = "Yes";
+          colorOptions.style.display = "block";
+        } else {
+          potColorText.textContent = "No";
+          colorOptions.style.display = "none";
+        }
+      });
+    </script>
+    <script type="module" src="../src/customize.js"></script>
+  </body>
 </html>

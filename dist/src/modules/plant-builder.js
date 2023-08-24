@@ -1,21 +1,20 @@
-class PlantRecomendation{
-  constructor({plant,soil,pot}){
+class PlantRecomendation {
+  constructor({ plant, soil, pot }) {
     this.plant = plant;
     this.soil = soil;
     this.pot = pot;
   }
-  addColor(color){
+  addColor(color) {
     this.color = color;
   }
-  addMoss(){
-    this.moss = 'moss-pole';
+  addMoss() {
+    this.moss = "moss-pole";
   }
-  addPebbles(){
-    this.pebbles = 'pebbles';
+  addPebbles() {
+    this.pebbles = "pebbles";
   }
-  addGreenies(){
-    this.greenies = 'mini-plants';
+  addGreenies() {
+    this.greenies = "mini-plants";
   }
 }
 module.exports = PlantRecomendation;
-

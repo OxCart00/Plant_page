@@ -9,8 +9,8 @@
 // eslint-disable-next-line no-global-assign
 parcelRequire = (function (modules, cache, entry, globalName) {
   // Save the require from previous bundle to this closure if any
-  var previousRequire = typeof parcelRequire === 'function' && parcelRequire;
-  var nodeRequire = typeof require === 'function' && require;
+  var previousRequire = typeof parcelRequire === "function" && parcelRequire;
+  var nodeRequire = typeof require === "function" && require;
 
   function newRequire(name, jumped) {
     if (!cache[name]) {
@@ -18,7 +18,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
         // if we cannot find the module within our internal map or
         // cache jump to the current global require ie. the last bundle
         // that was added to the page.
-        var currentRequire = typeof parcelRequire === 'function' && parcelRequire;
+        var currentRequire =
+          typeof parcelRequire === "function" && parcelRequire;
         if (!jumped && currentRequire) {
           return currentRequire(name, true);
         }
@@ -32,29 +33,35 @@ parcelRequire = (function (modules, cache, entry, globalName) {
         }
 
         // Try the node require function if it exists.
-        if (nodeRequire && typeof name === 'string') {
+        if (nodeRequire && typeof name === "string") {
           return nodeRequire(name);
         }
 
-        var err = new Error('Cannot find module \'' + name + '\'');
-        err.code = 'MODULE_NOT_FOUND';
+        var err = new Error("Cannot find module '" + name + "'");
+        err.code = "MODULE_NOT_FOUND";
         throw err;
       }
 
       localRequire.resolve = resolve;
 
-      var module = cache[name] = new newRequire.Module(name);
+      var module = (cache[name] = new newRequire.Module(name));
 
-      modules[name][0].call(module.exports, localRequire, module, module.exports, this);
+      modules[name][0].call(
+        module.exports,
+        localRequire,
+        module,
+        module.exports,
+        this,
+      );
     }
 
     return cache[name].exports;
 
-    function localRequire(x){
+    function localRequire(x) {
       return newRequire(localRequire.resolve(x));
     }
 
-    function resolve(x){
+    function resolve(x) {
       return modules[name][1][x] || x;
     }
   }
@@ -84,13 +91,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     if (typeof exports === "object" && typeof module !== "undefined") {
       module.exports = mainExports;
 
-    // RequireJS
+      // RequireJS
     } else if (typeof define === "function" && define.amd) {
-     define(function () {
-       return mainExports;
-     });
+      define(function () {
+        return mainExports;
+      });
 
-    // <script>
+      // <script>
     } else if (globalName) {
       this[globalName] = mainExports;
     }
@@ -98,241 +105,291 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({8:[function(require,module,exports) {
-var bundleURL = null;
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
+})(
+  {
+    8: [
+      function (require, module, exports) {
+        var bundleURL = null;
+        function getBundleURLCached() {
+          if (!bundleURL) {
+            bundleURL = getBundleURL();
+          }
 
-  return bundleURL;
-}
+          return bundleURL;
+        }
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
+        function getBundleURL() {
+          // Attempt to find the URL of the current script and use that as the base URL
+          try {
+            throw new Error();
+          } catch (err) {
+            var matches = ("" + err.stack).match(
+              /(https?|file|ftp):\/\/[^)\n]+/g,
+            );
+            if (matches) {
+              return getBaseURL(matches[0]);
+            }
+          }
 
-  return '/';
-}
+          return "/";
+        }
 
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
+        function getBaseURL(url) {
+          return (
+            ("" + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, "$1") +
+            "/"
+          );
+        }
 
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],5:[function(require,module,exports) {
-var bundle = require('./bundle-url');
+        exports.getBundleURL = getBundleURLCached;
+        exports.getBaseURL = getBaseURL;
+      },
+      {},
+    ],
+    5: [
+      function (require, module, exports) {
+        var bundle = require("./bundle-url");
 
-function updateLink(link) {
-  var newLink = link.cloneNode();
-  newLink.onload = function () {
-    link.remove();
-  };
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
+        function updateLink(link) {
+          var newLink = link.cloneNode();
+          newLink.onload = function () {
+            link.remove();
+          };
+          newLink.href = link.href.split("?")[0] + "?" + Date.now();
+          link.parentNode.insertBefore(newLink, link.nextSibling);
+        }
 
-var cssTimeout = null;
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
+        var cssTimeout = null;
+        function reloadCSS() {
+          if (cssTimeout) {
+            return;
+          }
 
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
+          cssTimeout = setTimeout(function () {
+            var links = document.querySelectorAll('link[rel="stylesheet"]');
+            for (var i = 0; i < links.length; i++) {
+              if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+                updateLink(links[i]);
+              }
+            }
 
-    cssTimeout = null;
-  }, 50);
-}
+            cssTimeout = null;
+          }, 50);
+        }
 
-module.exports = reloadCSS;
-},{"./bundle-url":8}],2:[function(require,module,exports) {
-
-        var reloadCSS = require('_css_loader');
+        module.exports = reloadCSS;
+      },
+      { "./bundle-url": 8 },
+    ],
+    2: [
+      function (require, module, exports) {
+        var reloadCSS = require("_css_loader");
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
-      
-},{"_css_loader":5}],9:[function(require,module,exports) {
-var global = arguments[3];
-var OVERLAY_ID = '__parcel__error__overlay__';
+      },
+      { _css_loader: 5 },
+    ],
+    9: [
+      function (require, module, exports) {
+        var global = arguments[3];
+        var OVERLAY_ID = "__parcel__error__overlay__";
 
-var OldModule = module.bundle.Module;
+        var OldModule = module.bundle.Module;
 
-function Module(moduleName) {
-  OldModule.call(this, moduleName);
-  this.hot = {
-    data: module.bundle.hotData,
-    _acceptCallbacks: [],
-    _disposeCallbacks: [],
-    accept: function (fn) {
-      this._acceptCallbacks.push(fn || function () {});
-    },
-    dispose: function (fn) {
-      this._disposeCallbacks.push(fn);
-    }
-  };
+        function Module(moduleName) {
+          OldModule.call(this, moduleName);
+          this.hot = {
+            data: module.bundle.hotData,
+            _acceptCallbacks: [],
+            _disposeCallbacks: [],
+            accept: function (fn) {
+              this._acceptCallbacks.push(fn || function () {});
+            },
+            dispose: function (fn) {
+              this._disposeCallbacks.push(fn);
+            },
+          };
 
-  module.bundle.hotData = null;
-}
-
-module.bundle.Module = Module;
-
-var parent = module.bundle.parent;
-if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
-  var hostname = '' || location.hostname;
-  var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52089' + '/');
-  ws.onmessage = function (event) {
-    var data = JSON.parse(event.data);
-
-    if (data.type === 'update') {
-      data.assets.forEach(function (asset) {
-        hmrApply(global.parcelRequire, asset);
-      });
-
-      data.assets.forEach(function (asset) {
-        if (!asset.isNew) {
-          hmrAccept(global.parcelRequire, asset.id);
+          module.bundle.hotData = null;
         }
-      });
-      // Clear the console after HMR
-      console.clear();
-    }
 
-    if (data.type === 'reload') {
-      ws.close();
-      ws.onclose = function () {
-        location.reload();
-      };
-    }
+        module.bundle.Module = Module;
 
-    if (data.type === 'error-resolved') {
-      console.log('[parcel] ✨ Error resolved');
+        var parent = module.bundle.parent;
+        if (
+          (!parent || !parent.isParcelRequire) &&
+          typeof WebSocket !== "undefined"
+        ) {
+          var hostname = "" || location.hostname;
+          var protocol = location.protocol === "https:" ? "wss" : "ws";
+          var ws = new WebSocket(
+            protocol + "://" + hostname + ":" + "52089" + "/",
+          );
+          ws.onmessage = function (event) {
+            var data = JSON.parse(event.data);
 
-      removeErrorOverlay();
-    }
+            if (data.type === "update") {
+              data.assets.forEach(function (asset) {
+                hmrApply(global.parcelRequire, asset);
+              });
 
-    if (data.type === 'error') {
-      console.error('[parcel] 🚨  ' + data.error.message + '\n' + data.error.stack);
+              data.assets.forEach(function (asset) {
+                if (!asset.isNew) {
+                  hmrAccept(global.parcelRequire, asset.id);
+                }
+              });
+              // Clear the console after HMR
+              console.clear();
+            }
 
-      removeErrorOverlay();
+            if (data.type === "reload") {
+              ws.close();
+              ws.onclose = function () {
+                location.reload();
+              };
+            }
 
-      var overlay = createErrorOverlay(data);
-      document.body.appendChild(overlay);
-    }
-  };
-}
+            if (data.type === "error-resolved") {
+              console.log("[parcel] ✨ Error resolved");
 
-function removeErrorOverlay() {
-  var overlay = document.getElementById(OVERLAY_ID);
-  if (overlay) {
-    overlay.remove();
-  }
-}
+              removeErrorOverlay();
+            }
 
-function createErrorOverlay(data) {
-  var overlay = document.createElement('div');
-  overlay.id = OVERLAY_ID;
+            if (data.type === "error") {
+              console.error(
+                "[parcel] 🚨  " + data.error.message + "\n" + data.error.stack,
+              );
 
-  // html encode message and stack trace
-  var message = document.createElement('div');
-  var stackTrace = document.createElement('pre');
-  message.innerText = data.error.message;
-  stackTrace.innerText = data.error.stack;
+              removeErrorOverlay();
 
-  overlay.innerHTML = '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' + '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' + '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' + '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' + message.innerHTML + '</div>' + '<pre>' + stackTrace.innerHTML + '</pre>' + '</div>';
+              var overlay = createErrorOverlay(data);
+              document.body.appendChild(overlay);
+            }
+          };
+        }
 
-  return overlay;
-}
+        function removeErrorOverlay() {
+          var overlay = document.getElementById(OVERLAY_ID);
+          if (overlay) {
+            overlay.remove();
+          }
+        }
 
-function getParents(bundle, id) {
-  var modules = bundle.modules;
-  if (!modules) {
-    return [];
-  }
+        function createErrorOverlay(data) {
+          var overlay = document.createElement("div");
+          overlay.id = OVERLAY_ID;
 
-  var parents = [];
-  var k, d, dep;
+          // html encode message and stack trace
+          var message = document.createElement("div");
+          var stackTrace = document.createElement("pre");
+          message.innerText = data.error.message;
+          stackTrace.innerText = data.error.stack;
 
-  for (k in modules) {
-    for (d in modules[k][1]) {
-      dep = modules[k][1][d];
-      if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
-        parents.push(+k);
-      }
-    }
-  }
+          overlay.innerHTML =
+            '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' +
+            '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' +
+            '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' +
+            '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' +
+            message.innerHTML +
+            "</div>" +
+            "<pre>" +
+            stackTrace.innerHTML +
+            "</pre>" +
+            "</div>";
 
-  if (bundle.parent) {
-    parents = parents.concat(getParents(bundle.parent, id));
-  }
+          return overlay;
+        }
 
-  return parents;
-}
+        function getParents(bundle, id) {
+          var modules = bundle.modules;
+          if (!modules) {
+            return [];
+          }
 
-function hmrApply(bundle, asset) {
-  var modules = bundle.modules;
-  if (!modules) {
-    return;
-  }
+          var parents = [];
+          var k, d, dep;
 
-  if (modules[asset.id] || !bundle.parent) {
-    var fn = new Function('require', 'module', 'exports', asset.generated.js);
-    asset.isNew = !modules[asset.id];
-    modules[asset.id] = [fn, asset.deps];
-  } else if (bundle.parent) {
-    hmrApply(bundle.parent, asset);
-  }
-}
+          for (k in modules) {
+            for (d in modules[k][1]) {
+              dep = modules[k][1][d];
+              if (
+                dep === id ||
+                (Array.isArray(dep) && dep[dep.length - 1] === id)
+              ) {
+                parents.push(+k);
+              }
+            }
+          }
 
-function hmrAccept(bundle, id) {
-  var modules = bundle.modules;
-  if (!modules) {
-    return;
-  }
+          if (bundle.parent) {
+            parents = parents.concat(getParents(bundle.parent, id));
+          }
 
-  if (!modules[id] && bundle.parent) {
-    return hmrAccept(bundle.parent, id);
-  }
+          return parents;
+        }
 
-  var cached = bundle.cache[id];
-  bundle.hotData = {};
-  if (cached) {
-    cached.hot.data = bundle.hotData;
-  }
+        function hmrApply(bundle, asset) {
+          var modules = bundle.modules;
+          if (!modules) {
+            return;
+          }
 
-  if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
-    cached.hot._disposeCallbacks.forEach(function (cb) {
-      cb(bundle.hotData);
-    });
-  }
+          if (modules[asset.id] || !bundle.parent) {
+            var fn = new Function(
+              "require",
+              "module",
+              "exports",
+              asset.generated.js,
+            );
+            asset.isNew = !modules[asset.id];
+            modules[asset.id] = [fn, asset.deps];
+          } else if (bundle.parent) {
+            hmrApply(bundle.parent, asset);
+          }
+        }
 
-  delete bundle.cache[id];
-  bundle(id);
+        function hmrAccept(bundle, id) {
+          var modules = bundle.modules;
+          if (!modules) {
+            return;
+          }
 
-  cached = bundle.cache[id];
-  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
-    cached.hot._acceptCallbacks.forEach(function (cb) {
-      cb();
-    });
-    return true;
-  }
+          if (!modules[id] && bundle.parent) {
+            return hmrAccept(bundle.parent, id);
+          }
 
-  return getParents(global.parcelRequire, id).some(function (id) {
-    return hmrAccept(global.parcelRequire, id);
-  });
-}
-},{}]},{},[9], null)
+          var cached = bundle.cache[id];
+          bundle.hotData = {};
+          if (cached) {
+            cached.hot.data = bundle.hotData;
+          }
+
+          if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
+            cached.hot._disposeCallbacks.forEach(function (cb) {
+              cb(bundle.hotData);
+            });
+          }
+
+          delete bundle.cache[id];
+          bundle(id);
+
+          cached = bundle.cache[id];
+          if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+            cached.hot._acceptCallbacks.forEach(function (cb) {
+              cb();
+            });
+            return true;
+          }
+
+          return getParents(global.parcelRequire, id).some(function (id) {
+            return hmrAccept(global.parcelRequire, id);
+          });
+        }
+      },
+      {},
+    ],
+  },
+  {},
+  [9],
+  null,
+);

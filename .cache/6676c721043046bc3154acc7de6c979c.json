@@ -1,1 +1,447 @@
-{"dependencies":[{"name":"C:\\Users\\AMD\\Documents\\GitHub\\Plant_page\\package.json","includedInParent":true,"mtime":1692716636961},{"name":"./Modules/plant-object","loc":{"line":1,"column":23}}],"generated":{"js":"\"use strict\";var e=require(\"./Modules/plant-object\"),t=n(e);function n(e){return e&&e.__esModule?e:{default:e}}var r=document.querySelector(\".get--button\"),u=document.querySelector(\".clear--button\"),o=document.querySelector(\".info-sheet--container\"),c=document.querySelector(\".plants--form\");r.addEventListener(\"click\",function(e){e.preventDefault(),(0,t.default)()}),u.addEventListener(\"click\",function(e){e.preventDefault(),o.style.backgroundColor=\"white\",o.innerHTML=\"\",c.reset()});","map":{"mappings":[{"generated":{"line":3,"column":0},"source":"..\\src\\main.js","original":{"line":1,"column":0}},{"generated":{"line":9,"column":0},"source":"..\\src\\main.js","original":{"line":3,"column":0}},{"name":"getButton","generated":{"line":9,"column":4},"source":"..\\src\\main.js","original":{"line":3,"column":6}},{"name":"document","generated":{"line":9,"column":16},"source":"..\\src\\main.js","original":{"line":3,"column":18}},{"name":"querySelector","generated":{"line":9,"column":25},"source":"..\\src\\main.js","original":{"line":3,"column":27}},{"generated":{"line":9,"column":38},"source":"..\\src\\main.js","original":{"line":3,"column":18}},{"generated":{"line":9,"column":39},"source":"..\\src\\main.js","original":{"line":3,"column":41}},{"generated":{"line":9,"column":53},"source":"..\\src\\main.js","original":{"line":3,"column":18}},{"generated":{"line":9,"column":54},"source":"..\\src\\main.js","original":{"line":3,"column":0}},{"generated":{"line":10,"column":0},"source":"..\\src\\main.js","original":{"line":4,"column":0}},{"name":"clearButton","generated":{"line":10,"column":4},"source":"..\\src\\main.js","original":{"line":4,"column":6}},{"name":"document","generated":{"line":10,"column":18},"source":"..\\src\\main.js","original":{"line":4,"column":20}},{"name":"querySelector","generated":{"line":10,"column":27},"source":"..\\src\\main.js","original":{"line":4,"column":29}},{"generated":{"line":10,"column":40},"source":"..\\src\\main.js","original":{"line":4,"column":20}},{"generated":{"line":10,"column":41},"source":"..\\src\\main.js","original":{"line":4,"column":43}},{"generated":{"line":10,"column":57},"source":"..\\src\\main.js","original":{"line":4,"column":20}},{"generated":{"line":10,"column":58},"source":"..\\src\\main.js","original":{"line":4,"column":0}},{"generated":{"line":12,"column":0},"source":"..\\src\\main.js","original":{"line":6,"column":0}},{"name":"sheetContainer","generated":{"line":12,"column":4},"source":"..\\src\\main.js","original":{"line":6,"column":6}},{"name":"document","generated":{"line":12,"column":21},"source":"..\\src\\main.js","original":{"line":6,"column":23}},{"name":"querySelector","generated":{"line":12,"column":30},"source":"..\\src\\main.js","original":{"line":6,"column":32}},{"generated":{"line":12,"column":43},"source":"..\\src\\main.js","original":{"line":6,"column":23}},{"generated":{"line":12,"column":44},"source":"..\\src\\main.js","original":{"line":6,"column":46}},{"generated":{"line":12,"column":68},"source":"..\\src\\main.js","original":{"line":6,"column":23}},{"generated":{"line":12,"column":69},"source":"..\\src\\main.js","original":{"line":6,"column":0}},{"generated":{"line":13,"column":0},"source":"..\\src\\main.js","original":{"line":7,"column":0}},{"name":"formulario","generated":{"line":13,"column":4},"source":"..\\src\\main.js","original":{"line":7,"column":6}},{"name":"document","generated":{"line":13,"column":17},"source":"..\\src\\main.js","original":{"line":7,"column":19}},{"name":"querySelector","generated":{"line":13,"column":26},"source":"..\\src\\main.js","original":{"line":7,"column":28}},{"generated":{"line":13,"column":39},"source":"..\\src\\main.js","original":{"line":7,"column":19}},{"generated":{"line":13,"column":40},"source":"..\\src\\main.js","original":{"line":7,"column":42}},{"generated":{"line":13,"column":55},"source":"..\\src\\main.js","original":{"line":7,"column":19}},{"generated":{"line":13,"column":56},"source":"..\\src\\main.js","original":{"line":7,"column":0}},{"generated":{"line":15,"column":0},"source":"..\\src\\main.js","original":{"line":12,"column":0}},{"name":"getButton","generated":{"line":16,"column":0},"source":"..\\src\\main.js","original":{"line":13,"column":0}},{"name":"addEventListener","generated":{"line":16,"column":10},"source":"..\\src\\main.js","original":{"line":13,"column":10}},{"generated":{"line":16,"column":26},"source":"..\\src\\main.js","original":{"line":13,"column":0}},{"generated":{"line":16,"column":27},"source":"..\\src\\main.js","original":{"line":13,"column":27}},{"generated":{"line":16,"column":34},"source":"..\\src\\main.js","original":{"line":13,"column":0}},{"generated":{"line":16,"column":36},"source":"..\\src\\main.js","original":{"line":13,"column":36}},{"name":"event","generated":{"line":16,"column":46},"source":"..\\src\\main.js","original":{"line":13,"column":46}},{"generated":{"line":16,"column":51},"source":"..\\src\\main.js","original":{"line":13,"column":36}},{"generated":{"line":16,"column":53},"source":"..\\src\\main.js","original":{"line":13,"column":53}},{"name":"event","generated":{"line":17,"column":0},"source":"..\\src\\main.js","original":{"line":14,"column":2}},{"name":"preventDefault","generated":{"line":17,"column":8},"source":"..\\src\\main.js","original":{"line":14,"column":8}},{"generated":{"line":17,"column":22},"source":"..\\src\\main.js","original":{"line":14,"column":2}},{"generated":{"line":18,"column":0},"source":"..\\src\\main.js","original":{"line":15,"column":2}},{"generated":{"line":19,"column":0},"source":"..\\src\\main.js","original":{"line":16,"column":1}},{"generated":{"line":19,"column":1},"source":"..\\src\\main.js","original":{"line":13,"column":0}},{"generated":{"line":21,"column":0},"source":"..\\src\\main.js","original":{"line":18,"column":0}},{"name":"clearButton","generated":{"line":22,"column":0},"source":"..\\src\\main.js","original":{"line":19,"column":0}},{"name":"addEventListener","generated":{"line":22,"column":12},"source":"..\\src\\main.js","original":{"line":19,"column":12}},{"generated":{"line":22,"column":28},"source":"..\\src\\main.js","original":{"line":19,"column":0}},{"generated":{"line":22,"column":29},"source":"..\\src\\main.js","original":{"line":19,"column":29}},{"generated":{"line":22,"column":36},"source":"..\\src\\main.js","original":{"line":19,"column":0}},{"generated":{"line":22,"column":38},"source":"..\\src\\main.js","original":{"line":19,"column":38}},{"name":"event","generated":{"line":22,"column":48},"source":"..\\src\\main.js","original":{"line":19,"column":48}},{"generated":{"line":22,"column":53},"source":"..\\src\\main.js","original":{"line":19,"column":38}},{"generated":{"line":22,"column":55},"source":"..\\src\\main.js","original":{"line":19,"column":55}},{"name":"event","generated":{"line":23,"column":0},"source":"..\\src\\main.js","original":{"line":20,"column":2}},{"name":"preventDefault","generated":{"line":23,"column":8},"source":"..\\src\\main.js","original":{"line":20,"column":8}},{"generated":{"line":23,"column":22},"source":"..\\src\\main.js","original":{"line":20,"column":2}},{"name":"sheetContainer","generated":{"line":24,"column":0},"source":"..\\src\\main.js","original":{"line":21,"column":2}},{"name":"style","generated":{"line":24,"column":17},"source":"..\\src\\main.js","original":{"line":21,"column":17}},{"generated":{"line":24,"column":22},"source":"..\\src\\main.js","original":{"line":21,"column":2}},{"name":"backgroundColor","generated":{"line":24,"column":23},"source":"..\\src\\main.js","original":{"line":21,"column":23}},{"generated":{"line":24,"column":38},"source":"..\\src\\main.js","original":{"line":21,"column":2}},{"generated":{"line":24,"column":41},"source":"..\\src\\main.js","original":{"line":21,"column":41}},{"generated":{"line":24,"column":48},"source":"..\\src\\main.js","original":{"line":21,"column":2}},{"name":"sheetContainer","generated":{"line":25,"column":0},"source":"..\\src\\main.js","original":{"line":22,"column":2}},{"name":"innerHTML","generated":{"line":25,"column":17},"source":"..\\src\\main.js","original":{"line":22,"column":17}},{"generated":{"line":25,"column":26},"source":"..\\src\\main.js","original":{"line":22,"column":2}},{"generated":{"line":25,"column":29},"source":"..\\src\\main.js","original":{"line":22,"column":29}},{"generated":{"line":25,"column":31},"source":"..\\src\\main.js","original":{"line":22,"column":2}},{"name":"formulario","generated":{"line":26,"column":0},"source":"..\\src\\main.js","original":{"line":23,"column":2}},{"name":"reset","generated":{"line":26,"column":13},"source":"..\\src\\main.js","original":{"line":23,"column":13}},{"generated":{"line":26,"column":18},"source":"..\\src\\main.js","original":{"line":23,"column":2}},{"generated":{"line":27,"column":0},"source":"..\\src\\main.js","original":{"line":24,"column":1}},{"generated":{"line":27,"column":1},"source":"..\\src\\main.js","original":{"line":19,"column":0}}],"sources":{"..\\src\\main.js":"import formObject from \"./Modules/plant-object\";\r\n\r\nconst getButton = document.querySelector(\".get--button\");\r\nconst clearButton = document.querySelector(\".clear--button\");\r\n\r\nconst sheetContainer = document.querySelector('.info-sheet--container');\r\nconst formulario = document.querySelector('.plants--form');\r\n\r\n\r\n\r\n\r\n// Agregar un evento de clic al botón \"Get\"\r\ngetButton.addEventListener(\"click\", function (event) {\r\n  event.preventDefault();\r\n  formObject();\r\n});\r\n\r\n// Agregar un evento de clic al botón \"Clear\"\r\nclearButton.addEventListener(\"click\", function (event) {\r\n  event.preventDefault();\r\n  sheetContainer.style.backgroundColor = 'white';\r\n  sheetContainer.innerHTML = '';\r\n  formulario.reset();\r\n});"},"lineCount":null}},"hash":"513043e2a9e37091de8b2ca156d18b66","cacheData":{"env":{}}}
+{
+  "dependencies": [
+    {
+      "name": "C:\\Users\\AMD\\Documents\\GitHub\\Plant_page\\package.json",
+      "includedInParent": true,
+      "mtime": 1692716636961
+    },
+    { "name": "./Modules/plant-object", "loc": { "line": 1, "column": 23 } }
+  ],
+  "generated": {
+    "js": "\"use strict\";var e=require(\"./Modules/plant-object\"),t=n(e);function n(e){return e&&e.__esModule?e:{default:e}}var r=document.querySelector(\".get--button\"),u=document.querySelector(\".clear--button\"),o=document.querySelector(\".info-sheet--container\"),c=document.querySelector(\".plants--form\");r.addEventListener(\"click\",function(e){e.preventDefault(),(0,t.default)()}),u.addEventListener(\"click\",function(e){e.preventDefault(),o.style.backgroundColor=\"white\",o.innerHTML=\"\",c.reset()});",
+    "map": {
+      "mappings": [
+        {
+          "generated": { "line": 3, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 1, "column": 0 }
+        },
+        {
+          "generated": { "line": 9, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 3, "column": 0 }
+        },
+        {
+          "name": "getButton",
+          "generated": { "line": 9, "column": 4 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 3, "column": 6 }
+        },
+        {
+          "name": "document",
+          "generated": { "line": 9, "column": 16 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 3, "column": 18 }
+        },
+        {
+          "name": "querySelector",
+          "generated": { "line": 9, "column": 25 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 3, "column": 27 }
+        },
+        {
+          "generated": { "line": 9, "column": 38 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 3, "column": 18 }
+        },
+        {
+          "generated": { "line": 9, "column": 39 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 3, "column": 41 }
+        },
+        {
+          "generated": { "line": 9, "column": 53 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 3, "column": 18 }
+        },
+        {
+          "generated": { "line": 9, "column": 54 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 3, "column": 0 }
+        },
+        {
+          "generated": { "line": 10, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 4, "column": 0 }
+        },
+        {
+          "name": "clearButton",
+          "generated": { "line": 10, "column": 4 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 4, "column": 6 }
+        },
+        {
+          "name": "document",
+          "generated": { "line": 10, "column": 18 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 4, "column": 20 }
+        },
+        {
+          "name": "querySelector",
+          "generated": { "line": 10, "column": 27 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 4, "column": 29 }
+        },
+        {
+          "generated": { "line": 10, "column": 40 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 4, "column": 20 }
+        },
+        {
+          "generated": { "line": 10, "column": 41 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 4, "column": 43 }
+        },
+        {
+          "generated": { "line": 10, "column": 57 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 4, "column": 20 }
+        },
+        {
+          "generated": { "line": 10, "column": 58 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 4, "column": 0 }
+        },
+        {
+          "generated": { "line": 12, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 6, "column": 0 }
+        },
+        {
+          "name": "sheetContainer",
+          "generated": { "line": 12, "column": 4 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 6, "column": 6 }
+        },
+        {
+          "name": "document",
+          "generated": { "line": 12, "column": 21 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 6, "column": 23 }
+        },
+        {
+          "name": "querySelector",
+          "generated": { "line": 12, "column": 30 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 6, "column": 32 }
+        },
+        {
+          "generated": { "line": 12, "column": 43 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 6, "column": 23 }
+        },
+        {
+          "generated": { "line": 12, "column": 44 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 6, "column": 46 }
+        },
+        {
+          "generated": { "line": 12, "column": 68 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 6, "column": 23 }
+        },
+        {
+          "generated": { "line": 12, "column": 69 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 6, "column": 0 }
+        },
+        {
+          "generated": { "line": 13, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 7, "column": 0 }
+        },
+        {
+          "name": "formulario",
+          "generated": { "line": 13, "column": 4 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 7, "column": 6 }
+        },
+        {
+          "name": "document",
+          "generated": { "line": 13, "column": 17 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 7, "column": 19 }
+        },
+        {
+          "name": "querySelector",
+          "generated": { "line": 13, "column": 26 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 7, "column": 28 }
+        },
+        {
+          "generated": { "line": 13, "column": 39 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 7, "column": 19 }
+        },
+        {
+          "generated": { "line": 13, "column": 40 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 7, "column": 42 }
+        },
+        {
+          "generated": { "line": 13, "column": 55 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 7, "column": 19 }
+        },
+        {
+          "generated": { "line": 13, "column": 56 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 7, "column": 0 }
+        },
+        {
+          "generated": { "line": 15, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 12, "column": 0 }
+        },
+        {
+          "name": "getButton",
+          "generated": { "line": 16, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 13, "column": 0 }
+        },
+        {
+          "name": "addEventListener",
+          "generated": { "line": 16, "column": 10 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 13, "column": 10 }
+        },
+        {
+          "generated": { "line": 16, "column": 26 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 13, "column": 0 }
+        },
+        {
+          "generated": { "line": 16, "column": 27 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 13, "column": 27 }
+        },
+        {
+          "generated": { "line": 16, "column": 34 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 13, "column": 0 }
+        },
+        {
+          "generated": { "line": 16, "column": 36 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 13, "column": 36 }
+        },
+        {
+          "name": "event",
+          "generated": { "line": 16, "column": 46 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 13, "column": 46 }
+        },
+        {
+          "generated": { "line": 16, "column": 51 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 13, "column": 36 }
+        },
+        {
+          "generated": { "line": 16, "column": 53 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 13, "column": 53 }
+        },
+        {
+          "name": "event",
+          "generated": { "line": 17, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 14, "column": 2 }
+        },
+        {
+          "name": "preventDefault",
+          "generated": { "line": 17, "column": 8 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 14, "column": 8 }
+        },
+        {
+          "generated": { "line": 17, "column": 22 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 14, "column": 2 }
+        },
+        {
+          "generated": { "line": 18, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 15, "column": 2 }
+        },
+        {
+          "generated": { "line": 19, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 16, "column": 1 }
+        },
+        {
+          "generated": { "line": 19, "column": 1 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 13, "column": 0 }
+        },
+        {
+          "generated": { "line": 21, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 18, "column": 0 }
+        },
+        {
+          "name": "clearButton",
+          "generated": { "line": 22, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 19, "column": 0 }
+        },
+        {
+          "name": "addEventListener",
+          "generated": { "line": 22, "column": 12 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 19, "column": 12 }
+        },
+        {
+          "generated": { "line": 22, "column": 28 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 19, "column": 0 }
+        },
+        {
+          "generated": { "line": 22, "column": 29 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 19, "column": 29 }
+        },
+        {
+          "generated": { "line": 22, "column": 36 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 19, "column": 0 }
+        },
+        {
+          "generated": { "line": 22, "column": 38 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 19, "column": 38 }
+        },
+        {
+          "name": "event",
+          "generated": { "line": 22, "column": 48 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 19, "column": 48 }
+        },
+        {
+          "generated": { "line": 22, "column": 53 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 19, "column": 38 }
+        },
+        {
+          "generated": { "line": 22, "column": 55 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 19, "column": 55 }
+        },
+        {
+          "name": "event",
+          "generated": { "line": 23, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 20, "column": 2 }
+        },
+        {
+          "name": "preventDefault",
+          "generated": { "line": 23, "column": 8 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 20, "column": 8 }
+        },
+        {
+          "generated": { "line": 23, "column": 22 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 20, "column": 2 }
+        },
+        {
+          "name": "sheetContainer",
+          "generated": { "line": 24, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 21, "column": 2 }
+        },
+        {
+          "name": "style",
+          "generated": { "line": 24, "column": 17 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 21, "column": 17 }
+        },
+        {
+          "generated": { "line": 24, "column": 22 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 21, "column": 2 }
+        },
+        {
+          "name": "backgroundColor",
+          "generated": { "line": 24, "column": 23 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 21, "column": 23 }
+        },
+        {
+          "generated": { "line": 24, "column": 38 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 21, "column": 2 }
+        },
+        {
+          "generated": { "line": 24, "column": 41 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 21, "column": 41 }
+        },
+        {
+          "generated": { "line": 24, "column": 48 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 21, "column": 2 }
+        },
+        {
+          "name": "sheetContainer",
+          "generated": { "line": 25, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 22, "column": 2 }
+        },
+        {
+          "name": "innerHTML",
+          "generated": { "line": 25, "column": 17 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 22, "column": 17 }
+        },
+        {
+          "generated": { "line": 25, "column": 26 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 22, "column": 2 }
+        },
+        {
+          "generated": { "line": 25, "column": 29 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 22, "column": 29 }
+        },
+        {
+          "generated": { "line": 25, "column": 31 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 22, "column": 2 }
+        },
+        {
+          "name": "formulario",
+          "generated": { "line": 26, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 23, "column": 2 }
+        },
+        {
+          "name": "reset",
+          "generated": { "line": 26, "column": 13 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 23, "column": 13 }
+        },
+        {
+          "generated": { "line": 26, "column": 18 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 23, "column": 2 }
+        },
+        {
+          "generated": { "line": 27, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 24, "column": 1 }
+        },
+        {
+          "generated": { "line": 27, "column": 1 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 19, "column": 0 }
+        }
+      ],
+      "sources": {
+        "..\\src\\main.js": "import formObject from \"./Modules/plant-object\";\r\n\r\nconst getButton = document.querySelector(\".get--button\");\r\nconst clearButton = document.querySelector(\".clear--button\");\r\n\r\nconst sheetContainer = document.querySelector('.info-sheet--container');\r\nconst formulario = document.querySelector('.plants--form');\r\n\r\n\r\n\r\n\r\n// Agregar un evento de clic al botón \"Get\"\r\ngetButton.addEventListener(\"click\", function (event) {\r\n  event.preventDefault();\r\n  formObject();\r\n});\r\n\r\n// Agregar un evento de clic al botón \"Clear\"\r\nclearButton.addEventListener(\"click\", function (event) {\r\n  event.preventDefault();\r\n  sheetContainer.style.backgroundColor = 'white';\r\n  sheetContainer.innerHTML = '';\r\n  formulario.reset();\r\n});"
+      },
+      "lineCount": null
+    }
+  },
+  "hash": "513043e2a9e37091de8b2ca156d18b66",
+  "cacheData": { "env": {} }
+}
