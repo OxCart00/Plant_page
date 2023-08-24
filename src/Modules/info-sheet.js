@@ -1,4 +1,4 @@
-function sheetBuilder() {
+export function sheetBuilder() {
   const plantInfo = JSON.parse(localStorage.getItem("plant-info"));
   const sheetContainer = document.querySelector(".info-sheet--container");
   const rgtBlock = document.querySelector(".right--block");
@@ -93,5 +93,3 @@ function sheetBuilder() {
     rgtBlock.appendChild(customizeBtn);
   }
 }
-
-export default sheetBuilder;

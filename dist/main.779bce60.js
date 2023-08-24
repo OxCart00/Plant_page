@@ -98,7 +98,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({15:[function(require,module,exports) {
+})({8:[function(require,module,exports) {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -142,12 +142,13 @@ var PlantRecomendation = function () {
 }();
 
 module.exports = PlantRecomendation;
-},{}],16:[function(require,module,exports) {
+},{}],9:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.sheetBuilder = sheetBuilder;
 function sheetBuilder() {
   var plantInfo = JSON.parse(localStorage.getItem("plant-info"));
   var sheetContainer = document.querySelector(".info-sheet--container");
@@ -243,22 +244,18 @@ function sheetBuilder() {
     rgtBlock.appendChild(customizeBtn);
   }
 }
-
-exports.default = sheetBuilder;
-},{}],14:[function(require,module,exports) {
+},{}],6:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _plantBuilder = require("./plant-builder");
+var _plantBuilder = require("./plant-builder.js");
 
 var _plantBuilder2 = _interopRequireDefault(_plantBuilder);
 
-var _infoSheet = require("./info-sheet");
-
-var _infoSheet2 = _interopRequireDefault(_infoSheet);
+var _infoSheet = require("./info-sheet.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -564,7 +561,7 @@ function formObject() {
         }
       }
       localStorage.setItem("plant-info", JSON.stringify(newPlant));
-      (0, _infoSheet2.default)();
+      (0, _infoSheet.sheetBuilder)();
     }
   } else {
     // Si no están completados, mostrar un mensaje de error
@@ -572,7 +569,7 @@ function formObject() {
   }
 }
 exports.default = formObject;
-},{"./plant-builder":15,"./info-sheet":16}],11:[function(require,module,exports) {
+},{"./plant-builder.js":8,"./info-sheet.js":9}],4:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -606,7 +603,7 @@ function initForm() {
   });
 }
 exports.default = initForm;
-},{"./plant-object.js":14}],6:[function(require,module,exports) {
+},{"./plant-object.js":6}],3:[function(require,module,exports) {
 "use strict";
 
 var _formEvents = require("./modules/form-events.js");
@@ -616,7 +613,7 @@ var _formEvents2 = _interopRequireDefault(_formEvents);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _formEvents2.default)();
-},{"./modules/form-events.js":11}],17:[function(require,module,exports) {
+},{"./modules/form-events.js":4}],10:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -645,7 +642,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '62487' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '63168' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -786,5 +783,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[17,6], null)
+},{}]},{},[10,3], null)
 //# sourceMappingURL=/main.779bce60.map

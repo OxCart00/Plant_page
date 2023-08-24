@@ -1,4 +1,4 @@
-import sheetBuilder from "./modules/info-sheet.js";
+import { sheetBuilder } from "./modules/info-sheet.js";
 sheetBuilder();
 
 const plantInfo = JSON.parse(localStorage.getItem("plant-info"));
