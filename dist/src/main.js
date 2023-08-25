@@ -1,4 +1,4 @@
-import formObject from "./Modules/plant-object";
+import { formObject } from "./modules/plant-object.js";
 
 const getButton = document.querySelector(".get--button");
 const clearButton = document.querySelector(".clear--button");
