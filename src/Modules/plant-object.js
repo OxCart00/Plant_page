@@ -9,7 +9,6 @@ function createRecommendation(selectedIds, plantType, potType) {
   const recommendations = buildRecommendations();
   const recommendation =
     recommendations[plantType][selectedIds[2]][potType][selectedIds[4]];
-  console.log(recommendation);
   const newPlant = new PlantRecomendation({
     plant: recommendation.plant,
     soil: recommendation.soil,
@@ -47,13 +46,6 @@ function formObject() {
     if (selectedIds.length >= 5) {
       const plantType = selectedIds[0];
       const potType = selectedIds[3] === "clay-pot" ? "clay-pot" : "other-pot";
-      console.log(
-        plantType,
-        selectedIds[2],
-        potType,
-        selectedIds[4],
-        selectedIds,
-      );
 
       const newPlant = createRecommendation(selectedIds, plantType, potType);
 

@@ -1,1 +1,33 @@
-{"dependencies":[{"name":"C:\\Users\\Oscar\\Documents\\GitHub\\Plant_page\\package.json","includedInParent":true,"mtime":1692894944028},{"name":"./modules/form-events.js","loc":{"line":1,"column":21}}],"generated":{"js":"\"use strict\";var e=require(\"./modules/form-events.js\"),u=r(e);function r(e){return e&&e.__esModule?e:{default:e}}(0,u.default)();","map":{"mappings":[{"generated":{"line":3,"column":0},"source":"..\\src\\main.js","original":{"line":1,"column":0}},{"generated":{"line":9,"column":0},"source":"..\\src\\main.js","original":{"line":3,"column":0}}],"sources":{"..\\src\\main.js":"import initForm from \"./modules/form-events.js\";\n\ninitForm();\n"},"lineCount":null}},"hash":"c081bf33acfdc94ef3a003dd14b3e06c","cacheData":{"env":{}}}
+{
+  "dependencies": [
+    {
+      "name": "C:\\Users\\Oscar\\Documents\\GitHub\\Plant_page\\package.json",
+      "includedInParent": true,
+      "mtime": 1692894944028
+    },
+    { "name": "./modules/form-events.js", "loc": { "line": 1, "column": 21 } }
+  ],
+  "generated": {
+    "js": "\"use strict\";var e=require(\"./modules/form-events.js\"),u=r(e);function r(e){return e&&e.__esModule?e:{default:e}}(0,u.default)();",
+    "map": {
+      "mappings": [
+        {
+          "generated": { "line": 3, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 1, "column": 0 }
+        },
+        {
+          "generated": { "line": 9, "column": 0 },
+          "source": "..\\src\\main.js",
+          "original": { "line": 3, "column": 0 }
+        }
+      ],
+      "sources": {
+        "..\\src\\main.js": "import initForm from \"./modules/form-events.js\";\n\ninitForm();\n"
+      },
+      "lineCount": null
+    }
+  },
+  "hash": "c081bf33acfdc94ef3a003dd14b3e06c",
+  "cacheData": { "env": {} }
+}
